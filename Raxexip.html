@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAX Myanmar Co., Ltd - Quality Seafood & Fresh Produce Exporter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2C3454;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: #f4a340;
+            padding: 0.2rem 4%;  /* very small padding */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+
+    
+
+
+    
+
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #5CC9BC;
+        }
+
+        .cta-button {
+            background: #F26896;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #d4567a;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url("cargo3.jpg") no-repeat center center/cover;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 8rem 5% 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 50%;
+            background: rgba(92, 201, 188, 0.1);
+            transform: skewX(-15deg);
+        }
+
+        .hero .content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            color: white;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #F26896;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #d4567a;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: 2px solid white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #4A5578;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .about .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: #4A5578;
+            margin-bottom: 1.5rem;
+        }
+
+        .about p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            background: #F5F5F7;
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4A5578;
+            font-style: italic;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 5%;
+            background: #F5F5F7;
+        }
+
+        .products h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #4A5578;
+            margin-bottom: 3rem;
+        }
+
+        .product-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 250px;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4A5578;
+            font-style: italic;
+        }
+
+        .product-card.seafood .product-image {
+            background: linear-gradient(135deg, rgba(92, 201, 188, 0.3), rgba(92, 201, 188, 0.1));
+        }
+
+        .product-card.vegetables .product-image {
+            background: linear-gradient(135deg, rgba(184, 216, 78, 0.3), rgba(184, 216, 78, 0.1));
+        }
+
+        .product-card.other .product-image {
+            background: linear-gradient(135deg, rgba(244, 163, 64, 0.3), rgba(244, 163, 64, 0.1));
+        }
+
+        .product-content {
+            padding: 2rem;
+        }
+
+        .product-content h3 {
+            color: #4A5578;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .product-content p {
+            margin-bottom: 0.5rem;
+        }
+
+        .product-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .product-card.seafood .product-tag {
+            background: rgba(92, 201, 188, 0.2);
+            color: #5CC9BC;
+        }
+
+        .product-card.vegetables .product-tag {
+            background: rgba(184, 216, 78, 0.2);
+            color: #7fa830;
+        }
+
+        .product-card.other .product-tag {
+            background: rgba(244, 163, 64, 0.2);
+            color: #F4A340;
+        }
+
+        /* Standards Section */
+        .standards {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .standards h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #4A5578;
+            margin-bottom: 3rem;
+        }
+
+        .standards-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .standard-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .standard-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: #F26896;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .standard-item:nth-child(2) .standard-icon {
+            background: #5CC9BC;
+        }
+
+        .standard-item:nth-child(3) .standard-icon {
+            background: #B8D84E;
+        }
+
+        .standard-item h3 {
+            color: #4A5578;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Export Services */
+        .export {
+            padding: 5rem 5%;
+            background: #F5F5F7;
+        }
+
+        .export h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #4A5578;
+            margin-bottom: 1rem;
+        }
+
+        .export .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .export-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .export-image {
+            background: #e0e0e0;
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4A5578;
+            font-style: italic;
+        }
+
+        .export-details h3 {
+            color: #4A5578;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .export-details ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .export-details ul li {
+            padding: 0.7rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        /* Change checkmarks to bullet points for more formal look */
+
+.export-details ul li:before {
+    content: "•";  /* Changed from "✓" to bullet point */
+    position: absolute;
+    left: 0;
+    color: #000000;
+    font-weight: bold;
+    font-size: 1.5rem;  /* Slightly larger bullet */
+}
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            background: #4A5578;
+            color: white;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: #F26896;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .contact-card:nth-child(2) .contact-icon {
+            background: #5CC9BC;
+        }
+
+        .contact-card:nth-child(3) .contact-icon {
+            background: #B8D84E;
+        }
+
+        .contact-label {
+            color: #5CC9BC;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            font-size: 1rem;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: #5CC9BC;
+        }
+
+        /* Footer */
+        footer {
+            background: #2C3454;
+            color: white;
+            padding: 3rem 5% 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-about h3 {
+            color: #5CC9BC;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links h4 {
+            color: #5CC9BC;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: #5CC9BC;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about .container,
+            .export-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* MOBILE NAVIGATION FIX - Replace all existing @media (max-width: 768px) rules for nav */
+
+@media (max-width: 768px) {
+    /* Reduce nav padding */
+    nav {
+        padding: 0.5rem 3% !important;
+    }
+
+    /* Make nav container stack vertically */
+    nav .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    /* Smaller logo */
+    .logo img {
+        height: 35px !important;
+    }
+
+    /* Keep navigation items HORIZONTAL in a row */
+    nav ul {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 0.3rem !important;
+        justify-content: center !important;
+        width: 100%;
+        padding: 0 !important;
+    }
+
+    /* Style navigation links for mobile */
+    nav ul li {
+        width: auto;
+    }
+
+    nav ul li a {
+        padding: 0.3rem 0.5rem !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+        display: inline-block;
+    }
+
+    /* Contact button styling */
+    .cta-button {
+        padding: 0.5rem 1.2rem !important;
+        font-size: 14px !important;
+        display: inline-block !important;
+        width: auto !important;
+        margin-top: 0 !important;
+    }
+
+    /* Hero section text size adjustment */
+    .hero h1 {
+        font-size: 2rem !important;
+    }
+
+    .hero p {
+        font-size: 1rem !important;
+    }
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="RAX offical logo.png" alt="RAX Logo" style="height:60px; vertical-align: middle; margin-left: 8px;">
+            </a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#standards">Our Standards</a></li>
+                <li><a href="#export">Export Services</a></li>
+                <li><a href="#contact" class="cta-button">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content">
+            <h1>Your Trusted Partner in Fresh Seafood & Produce Export</h1>
+            <p>RAX Myanmar delivers premium quality fresh fish and perishables to the Middle East and Southeast Asia through reliable sea container shipping.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn-primary">View Our Products</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div>
+                <h2>WE ARE RAX</h2>
+                <p>RAX Myanmar Co., Ltd is a leading export and import company based in Yangon, Myanmar, specializing in premium fresh seafood and perishable produce for wholesale markets.</p>
+                <p>We connect Myanmar's finest seafood and agricultural products with businesses across the Middle East and Southeast Asia, ensuring quality, freshness, and reliability in every shipment.</p>
+                <p>With years of experience in international trade and a deep understanding of cold chain logistics, we've built lasting relationships with suppliers and buyers who trust us to deliver excellence every time.</p>
+            </div>
+            <div class="about-image">
+                <img src="yangoncity.jpg" alt="company image" style="width:100%; height:100%; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2>Our Product Range</h2>
+        <div class="product-grid">
+            <div class="product-card seafood">
+                <div class="product-image">
+                    <img src="fresh food .jpg" alt="fresh food" style="width:200%; height:100%; object-fit: cover;">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Seafood</h3>
+                    <p>We export premium quality fresh and frozen fish including Rohu, Black Promfret, Hilsha, prawns, Spanish Mackerel and more sourced from Myanmar's pristine waters.</p>
+                    <p><strong>Markets:</strong> KSA, UAE, Qatar, Bangladesh, Malaysia, Thailand</p>
+                    <span class="product-tag">Sea Container Shipping</span>
+                </div>
+            </div>
+
+            <div class="product-card vegetables">
+                <div class="product-image">
+                    <img src="vege1.jpg" alt="fresh vegetables" style="width:200%; height:100%; object-fit: cover;">
+                </div>
+                <div class="product-content">
+                    <h3>Fresh Vegetables & Produce</h3>
+                    <p>Farm-fresh vegetables and produce including leafy greens, root vegetables, herbs, and seasonal specialties delivered with proper cold chain management.</p>
+                    <p><strong>Markets:</strong> Middle East & Southeast Asia</p>
+                    <span class="product-tag">Temperature Controlled</span>
+                </div>
+            </div>
+
+            <div class="product-card other">
+                <div class="product-image">
+                    <img src="rawfood.jpg" alt="other raw foods" style="width:200%; height:100%; object-fit: cover;">
+                </div>
+                <div class="product-content">
+                    <h3>Other Raw Foods</h3>
+                    <p>We also handle export of other perishable raw foods and specialty products based on client requirements and market demand.</p>
+                    <p><strong>Custom Orders:</strong> Available upon request</p>
+                    <span class="product-tag">Flexible Solutions</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standards Section -->
+    <section id="standards" class="standards">
+        <h2>Our Standards</h2>
+        <div class="standards-grid">
+            <div class="standard-item">
+                <div class="standard-icon">10+</div>
+                <h3>Years of Experience</h3>
+                <p>Over 10 years of expertise in international seafood and produce trade, serving wholesale buyers across multiple countries.</p>
+            </div>
+
+            <div class="standard-item">
+                <div class="standard-icon"><i class="fa-solid fa-snowflake"></i>
+</div>
+                <h3>Cold Chain Excellence</h3>
+                <p>Complete temperature-controlled logistics from source to destination, ensuring freshness and quality throughout the journey.</p>
+            </div>
+
+            <div class="standard-item">
+                <div class="standard-icon"><i class="fa-solid fa-circle-check"></i>
+</i></div>
+                <h3>Quality Guaranteed</h3>
+                <p>Every shipment undergoes rigorous quality checks. We stand behind our products with transparent sourcing and reliable service.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Export Services Section -->
+    <section id="export" class="export">
+        <h2>Export Services</h2>
+        <p class="subtitle">Comprehensive sea container shipping solutions for fresh seafood and perishables</p>
+        <div class="export-content">
+            <div class="export-image"> <img src="cargo.jpg" alt="export image" style="width:200%; height:100%; object-fit: cover;"></div>
+            <div class="export-details">
+                <h3>We Export To:</h3>
+                <ul>
+                    <li>Kingdom of Saudi Arabia (KSA)</li>
+                    <li>United Arab Emirates (UAE)</li>
+                    <li>Qatar</li>
+                    <li>Bangladesh</li>
+                    <li>Malaysia</li>
+                    <li>Thailand</li>
+                </ul>
+
+                <h3>Our Services Include:</h3>
+                <ul>
+                    <li>Sea container shipping with refrigerated units</li>
+                    <li>Complete export documentation and customs support</li>
+                    <li>Quality inspection and certification</li>
+                    <li>Flexible order quantities for wholesale buyers</li>
+                    <li>Reliable delivery schedules</li>
+                    <li>Competitive pricing and transparent quotes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="contact-label">Address</div>
+                <div class="contact-info">
+                    Bo Min Yaung Business Tower -4C,<br>
+                    Mingalar Taung Nyunt Township,<br>
+                    Yangon City, Myanmar, 11221
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="contact-label">Mobile</div>
+                <div class="contact-info">
+                    <a href="tel:+959512827">+95 9 512 8277</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                <div class="contact-label">WhatsApp</div>
+                <div class="contact-info">
+                    <a href="https://wa.me/+9595128277" target="_blank">+95 9 512 8277</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="contact-label">Email</div>
+                <div class="contact-info">
+                    <a href="mailto:office@raxmyanmar.com">office@raxmyanmar.com</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fa-solid fa-globe"></i></div>
+                <div class="contact-label">Website</div>
+                <div class="contact-info">
+                    <a href="http://www.raxmyanmar.com" target="_blank">www.raxmyanmar.com</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+            <div class="contact-icon"><i class="fa-brands fa-facebook"></i></div>
+            <div class="contact-label">Facebook</div>
+            <div class="contact-info">
+                <a href="https://www.facebook.com/raxmyanmar.co" target="_blank">facebook.com/RAXMyanmar</a>
+                </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>RAX Myanmar Co., Ltd</h3>
+                <p>Your trusted partner for premium seafood and fresh produce export from Myanmar to the Middle East and Southeast Asia.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#standards">Our Standards</a></li>
+                    <li><a href="#export">Export Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:office@raxmyanmar.com">office@raxmyanmar.com</a></li>
+                    <li><a href="tel:+959512827">+95 9 512 8277</a></li>
+                    <li><a href="#contact">Get in Touch</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RAX Myanmar Co., Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
