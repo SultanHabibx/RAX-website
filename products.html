@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product List | RAX Myanmar</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f7f8f6;
+      color: #2f3e3f;
+    }
+
+  h1 {color: #ffffff}
+    h2 {
+      color: #1f3a3d;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      color: #ffffff;
+      line-height: 1.7;
+    }
+
+    /* SECTION BASE */
+    section {
+      padding: 4rem 6%;
+    }
+
+    /* HERO */
+    /* HERO LAYOUT */
+.hero {
+  background: linear-gradient(135deg, #fff7ee, #ffffff);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* IMAGE LEFT */
+.hero-image img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+/* TEXT – SAME POSITION FEEL */
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  max-width: 650px;
+  font-size: 1.1rem;
+}
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image img {
+    height: 260px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+}
+
+
+
+/* LEFT TEXT */
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  max-width: 600px;
+  font-size: 1.1rem;
+}
+/* IMAGE RIGHT */
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1.1rem;
+    }
+
+    /* PRODUCT SECTIONS */
+    .product-section {
+      background: #f7f8f6;
+    }
+
+    .section-head {
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+    }
+
+    .section-head h2 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* PRODUCT GRID */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-item {
+      background: transparent;
+    }
+
+    .product-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 0.8rem;
+    }
+
+    .product-item h3 {
+      margin: 0.3rem 0;
+      font-size: 1.1rem;
+      color: #1f3a3d;
+    }
+
+    .sizes {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #1f3a3d;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: #050505;
+      font-size: 2.2rem;
+    }
+
+    .contact p {
+      color: #e0e0e0;
+      max-width: 600px;
+      margin: 1rem auto 2rem;
+    }
+
+    .contact a {
+      display: inline-block;
+      padding: 12px 28px;
+      background: #f4a340;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+    /* CONTACT AREA */
+.contact-area {
+  background: #505b7c;
+  padding: 4rem 6%;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.contact-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.contact-card h4 {
+  margin: 1rem 0 0.6rem;
+  color: #4de3c1;
+}
+
+.contact-card p {
+  color: #e6e6e6;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ICONS */
+.icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.icon.pink { background: #f26a8d; }
+.icon.green { background: #4dd0a6; }
+.icon.lime { background: #b7d53c; }
+.icon.blue { background: #4db3ff; }
+.site-footer {
+  background: #2f3756;
+  padding: 3.5rem 6%;
+  color: #ffffff;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 3rem;
+}
+
+.site-footer h3,
+.site-footer h4 {
+  color: #4de3c1;
+  margin-bottom: 1rem;
+}
+
+.site-footer p,
+.site-footer li {
+  color: #d6d9e0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.site-footer li {
+  margin-bottom: 0.6rem;
+}
+.contact-card a {
+  color: #e6e6e6;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.contact-card a:hover {
+  color: #4de3c1;
+}
+.footer-links a {
+  color: #d6d9e0;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: #4de3c1;
+}
+/* HORIZONTAL SCROLL */
+.horizontal-scroll {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+  border-radius: 10px;
+}
+
+.horizontal-item {
+  min-width: 300px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* OPTIONAL: smoother feel */
+.horizontal-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+.site-header {
+  background: #f4a340;
+  padding: 0.8rem 6%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 42px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.contact-btn {
+  background: #f26a8d;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+}
+.hero-banner {
+  position: relative;
+  background: url(fisherybanner.jpg)no-repeat center/cover;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 6% 2rem; /* small bottom padding only */
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.55)
+  );
+}
+
+.hero-content {
+  position: relative;
+  max-width: 900px;
+  color: #ffffff;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: #f26a8d;
+  color: #ffffff;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-outline {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+@media (max-width: 900px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+.product-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #f2f2f2;
+  border-radius: 16px;
+  padding: 10px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+  </style>
+</head>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="RAX offical logo.png" alt="RAX Myanmar">
+    </div>
+
+    <nav class="nav-links">
+      <a href="https://raxmyanmar.com" target="_blank">Home</a>
+      <a href="#contact" class="contact-btn">Contact Us</a>
+
+    </nav>
+  </div>
+</header>
+<section class="hero-banner">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>
+      Our Product List<br>
+      
+    </h1>
+
+    <p>
+      RAX Myanmar supplies premium-quality fresh and dry fish products, handled with strict quality control and prepared for international export markets..
+    </p>
+
+  </div>
+</section>
+
+
+<section class="hero">
+  <div class="hero-inner">
+
+      </div>
+</section>
+<section class="product-section">
+  <div class="section-head">
+    <h2>Fresh Fish</h2>
+    <p>
+      Carefully sourced fresh fish products, processed and packed to meet
+      international export standards.
+    </p>
+  </div>
+
+  <div class="product-grid">
+    <div class="product-item">
+      <img src="rohu.webp" alt="Fresh Fish">
+      <h3>Rohu</h3>
+      <p class="sizes"><strong>Sizes:</strong> 1500/2000GM, 1UP, 2UP, 3UP, 4UP, 5UP, 6UP, 7UP</p>
+    </div>
+
+    <div class="product-item">
+      <img src="Hilsa_Fish.jpg" alt="Fresh Fish">
+      <h3>Hilsha</h3>
+      <p class="sizes"><strong>Sizes:</strong> 800/1000GM, 300/500</p>
+    </div>
+    <div class="product-item">
+      <img src="Black-Pomfret.jpeg" alt="Fresh Fish">
+      <h3>Black-Pomfret</h3>
+      <p class="sizes"><strong>Sizes:</strong> 1.5UP, 2UP</p>
+    </div>
+    <div class="product-item">
+      <img src="White_Pomfret.webp" alt="Fresh Fish">
+      <h3>White-Pomfret</h3>
+      <p class="sizes"><strong>Sizes:</strong> 100/200, 800GM PKT</p>
+    </div>
+    <div class="product-item">
+      <img src="TILAPIA.avif" alt="Fresh Fish">
+      <h3>Talapia</h3>
+      <p class="sizes"><strong>Sizes:</strong> 800/1000GM, 1UP, 1500/2000GM, 2up, 1.5UP</p>
+    </div>
+    <div class="product-item">
+      <img src="Spanish_mack.jpg" alt="Fresh Fish">
+      <h3>Spanish Mackerel</h3>
+      <p class="sizes"><strong>Sizes:</strong> 2UP, 3UP</p>
+    </div>
+     <div class="product-item">
+      <img src="Tengra-fish.jpg" alt="Fresh Fish">
+      <h3>Tengra</h3>
+      <p class="sizes"><strong>Sizes:</strong> 250GM BLK</p>
+    </div>
+    <div class="product-item">
+      <img src="puti.webp" alt="Fresh Fish">
+      <h3>Puti</h3>
+      <p class="sizes"><strong>Sizes:</strong> 1UP, 1500/2000GM, 2up, 200/300GM</p>
+    </div>
+    <div class="product-item">
+      <img src="poa-fish-30-gm-500-gm.jpeg" alt="Fresh Fish">
+      <h3>Poa Loose</h3>
+      <p class="sizes"><strong>Sizes:</strong> 100/200, 80/100</p>
+</div>
+<div class="product-item">
+      <img src="Pangasius.jpg" alt="Fresh Fish">
+      <h3>Pangush</h3>
+      <p class="sizes"><strong>Sizes:</strong> 1UP, 2UP, 3UP, 4UP</p>
+
+  </div>
+  <div class="product-item">
+      <img src="MIRGAL.webp" alt="Fresh Fish">
+      <h3>Mirgal</h3>
+      <p class="sizes"><strong>Sizes:</strong> 1500/2000GM, 2up, 3UP, 4UP</p>
+</div>
+<div class="product-item">
+      <img src="katla.webp" alt="Fresh Fish">
+      <h3>Katla</h3>
+      <p class="sizes"><strong>Sizes:</strong> 2up, 3UP, 4UP, 5UP</p>
+</div>
+<div class="product-item">
+      <img src="gulsha.jpg" alt="Fresh Fish">
+      <h3>Gulsha</h3>
+      <p class="sizes"><strong>Sizes:</strong> 800GM PKT</p>
+</div>
+<div class="product-item">
+      <img src="E-moila.jpg" alt="Fresh Fish">
+      <h3>E-Moila</h3>
+      <p class="sizes"><strong>Sizes:</strong> 250GM BLK</p>
+</div>
+<div class="product-item">
+      <img src="CARFU.jpg" alt="Fresh Fish">
+      <h3>Carfu</h3>
+      <p class="sizes"><strong>Sizes:</strong> 1.5UP, 2UP, 3UP </p>
+</div>
+<div class="product-item">
+      <img src="Ayer.jpg" alt="Fresh Fish">
+      <h3>Ayer</h3>
+      <p class="sizes"><strong>Sizes:</strong> 1UP, 1.5UP, 2UP </p>
+</div>
+<div class="product-item">
+      <img src="sarar.jpg" alt="Fresh Fish">
+      <h3>Sarar</h3>
+      <p class="sizes"><strong>Sizes:</strong> 800GM PKT </p>
+</div>
+  
+</section>
+<section class="product-section">
+  <div class="section-head">
+    <h2>Dry Fish</h2>
+    <p>
+      Naturally dried fish products processed under hygienic conditions for extended shelf life and export.
+    </p>
+  </div>
+
+  <div class="horizontal-scroll">
+
+    <div class="product-item horizontal-item">
+      <img src="dry anchovy.jpg" alt="Dry Anchovy">
+      <h3>Dry Anchovy</h3>
+      <p class="sizes"><strong>Sizes:</strong> 200GM PKT</p>
+    </div>
+
+    <div class="product-item horizontal-item">
+      <img src="dry lotia.webp" alt="Dry Fish">
+      <h3>Dry Lotia</h3>
+      <p class="sizes"><strong>Sizes:</strong> 200GM PKT
+</p>
+    </div>
+
+    <div class="product-item horizontal-item">
+      <img src="DRY FASHA.png" alt="Dry Fish">
+      <h3>Dry fasha</h3>
+      <p class="sizes"><strong>Sizes:</strong> 200GM PKT</p>
+    </div>
+
+    <!-- add more items freely -->
+
+  </div>
+</section>
+
+</section>
+<section class="contact-area" id="contact">
+
+
+  <div class="contact-grid">
+
+    <div class="contact-card">
+      <div class="icon pink">📍</div>
+      <h4>Address</h4>
+      <p>
+        Bo Min Yaung Business Tower -4C,<br>
+        Mingalar Taung Nyunt Township,<br>
+        Yangon City, Myanmar, 11221
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon green">📞</div>
+      <h4>Mobile</h4>
+      <a href="tel:+9595128277">+95 9 512 8277</a>
+
+    </div>
+
+    <div class="contact-card">
+      <div class="icon lime">💬</div>
+      <h4>WhatsApp</h4>
+      <a href="https://wa.me/9595128277" target="_blank">
+  +95 9 512 8277
+</a>
+
+    </div>
+
+    <div class="contact-card">
+      <div class="icon pink">✉️</div>
+      <h4>Email</h4>
+      <a href="mailto:office@raxmyanmar.com">
+  office@raxmyanmar.com
+</a>
+
+    </div>
+
+    <div class="contact-card">
+      <div class="icon blue">🌐</div>
+      <h4>Website</h4>
+   <a href="https://www.raxmyanmar.com" target="_blank">
+  www.raxmyanmar.com
+</a>
+
+    </div>
+
+    <div class="contact-card">
+      <div class="icon pink">f</div>
+      <h4>Facebook</h4>
+      <a href="https://www.facebook.com/share/1GQmFJypBw/?mibextid=wwXIfr" target="_blank">
+  facebook.com/RAXMyanmar
+</a>
+
+    </div>
+    </div>
+
+</section>
+<footer class="site-footer">
+
+  <div class="footer-grid">
+
+    <div>
+      <h3>RAX Myanmar Co., Ltd</h3>
+      <p>
+        Your trusted partner for premium seafood and fresh produce export
+        from Myanmar to the Middle East and Southeast Asia.
+      </p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+  <li><a href="https://raxmyanmar.com" target="_blank">About Us</a></li>
+  <li><a href="https://raxmyanmar.com" target="_blank">Products</a></li>
+  <li><a href="https://raxmyanmar.com" target="_blank">Our Standards</a></li>
+  <li><a href="https://raxmyanmar.com" target="_blank">Export Services</a></li>
+</ul>
+
+    </div>
+
+    <div>
+      <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:office@raxmyanmar.com">office@raxmyanmar.com</a></li>
+                    <li><a href="tel:+959512827">+95 9 512 8277</a></li>
+                    <li><a href="https://wa.me/9595128277">WhatsApp</a></li>
+                </ul>
+            </div>
+
+      
+     
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<body>
