@@ -130,8 +130,8 @@
         }
 
         .btn-primary {
-            background: #F26896;
-            color: white;
+            background: #3797c4;
+            color: rgb(255, 255, 255);
             padding: 1rem 2.5rem;
             border-radius: 5px;
             text-decoration: none;
@@ -141,14 +141,13 @@
         }
 
         .btn-primary:hover {
-            background: #d4567a;
+            background: #dbdbdb;
         }
 
         .btn-secondary {
-            background: transparent;
-            color: white;
+            background: #7fa830;
+            color: rgb(255, 255, 255);
             padding: 1rem 2.5rem;
-            border: 2px solid white;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
@@ -613,6 +612,111 @@
         font-size: 1rem !important;
     }
 }
+.processing-packaging {
+  padding: 4rem 6%;
+  background: #f7f8f6;
+}
+
+.section-header {
+  max-width: 800px;
+  margin-bottom: 3rem;
+}
+.processing-section {
+  padding: 4rem 6%;
+  background: #f7f8f6;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #40557a;
+  margin-bottom: 3rem;
+}
+
+/* GRID */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.info-card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+}
+
+/* IMAGE */
+.info-card img {
+  width: 100%;
+  height: 200px;          /* NORMAL size like your screenshot */
+  object-fit: cover;
+}
+
+/* CONTENT */
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-content h3 {
+  color: #40557a;
+  margin-bottom: 0.8rem;
+}
+
+.card-content p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+/* TAGS */
+.tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #e7f6f4;
+  color: #1fa7a1;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.tag-green {
+  background: #eef7dc;
+  color: #7aa61d;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .info-card img {
+    height: 180px;
+  }
+}
+.video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -626,7 +730,8 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#products">Products</a></li>
-                <li><a href="products.html">Product List</a></li>
+                <li><a href="products.html">Fish-product</a></li>
+                <li><a href="agro.html">Agro-product</a></li>
                 <li><a href="#standards">Our Standards</a></li>
                 <li><a href="#export">Export Services</a></li>
                 <li><a href="#contact" class="cta-button">Contact Us</a></li>
@@ -640,8 +745,8 @@
             <h1>Your Trusted Partner in Fresh Seafood & Produce Export</h1>
             <p>RAX Myanmar delivers premium quality fresh fish and perishables to the Middle East and Southeast Asia through reliable sea container shipping.</p>
             <div class="hero-buttons">
-                <a href="https://raxmyanmar.com/products.html" class="btn-primary">View Our Products</a>
-                <a href="#contact" class="btn-secondary">Get in Touch</a>
+                <a href="https://raxmyanmar.com/products.html" class="btn-primary">Fish-product</a>
+                <a href="agro.html" class="btn-secondary">Agro-product</a>
             </div>
         </div>
     </section>
@@ -673,7 +778,7 @@
                     <h3>Fresh Seafood</h3>
                     <p>We export premium quality fresh and frozen fish including Rohu, Black Promfret, Hilsha, prawns, Spanish Mackerel and more sourced from Myanmar's pristine waters.</p>
                     <p><strong>Markets:</strong> KSA, UAE, Qatar, Bangladesh, Malaysia, Thailand</p>
-                    <span class="product-tag">Sea Container Shipping, Air cargo</span>
+                    <span class="product-tag">Sea Container Shipping, Air Cargo</span>
                 </div>
             </div>
 
@@ -728,6 +833,68 @@
             </div>
         </div>
     </section>
+<section class="processing-section">
+  <h2 class="section-title">Processing & Packaging</h2>
+
+  <div class="card-grid">
+
+    <!-- SEA CONTAINER CARD -->
+    <div class="info-card">
+     <div class="video-wrapper">
+  <video 
+    muted 
+    playsinline 
+    controls
+    preload="metadata"
+  >
+    <source src="seapaking.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+      <div class="card-content">
+        <h3>Sea Container Packaging</h3>
+        <p>
+          Products are carefully processed, graded, iced, and packed
+          into export-grade cartons before being palletized and loaded
+          into temperature-controlled sea containers.
+        </p>
+
+        <p><strong>Suitable for:</strong> Bulk shipments, frozen & chilled products</p>
+
+        <span class="tag">Cold Chain Maintained</span>
+      </div>
+    </div>
+
+    <!-- AIR CARGO CARD -->
+    <div class="info-card">
+      <div class="video-wrapper">
+  <video 
+    muted 
+    playsinline 
+    controls
+    preload="metadata"
+  >
+    <source src="cargo.mp4" type="video/mp4">
+  </video>
+</div>
+      <div class="card-content">
+        <h3>Air Cargo Packaging</h3>
+        <p>
+          Rapid processing with lightweight insulated boxes, gel ice
+          or dry ice to ensure maximum freshness during short transit
+          times.
+        </p>
+
+        <p><strong>Suitable for:</strong> Fresh & time-sensitive shipments</p>
+
+        <span class="tag tag-green">Fast Dispatch</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- Export Services Section -->
     <section id="export" class="export">
@@ -846,5 +1013,3 @@
     </footer>
 </body>
 </html>
-
-
