@@ -152,63 +152,8 @@
       color: #666;
     }
 
-    /* CONTACT */
-    .contact {
-      background: #1f3a3d;
-      color: #ffffff;
-      text-align: center;
-    }
-
-    .contact h2 {
-      color: #050505;
-      font-size: 2.2rem;
-    }
-
-    .contact p {
-      color: #e0e0e0;
-      max-width: 600px;
-      margin: 1rem auto 2rem;
-    }
-
-    .contact a {
-      display: inline-block;
-      padding: 12px 28px;
-      background: #f4a340;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 600;
-    }
-    /* CONTACT AREA */
-.contact-area {
-  background: #505b7c;
-  padding: 4rem 6%;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-}
-
-.contact-card {
-  background: rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  color: #ffffff;
-}
-
-.contact-card h4 {
-  margin: 1rem 0 0.6rem;
-  color: #4de3c1;
-}
-
-.contact-card p {
-  color: #e6e6e6;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
+    
+     
 
 /* ICONS */
 .icon {
@@ -233,51 +178,7 @@
   color: #ffffff;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 3rem;
-}
 
-.site-footer h3,
-.site-footer h4 {
-  color: #4de3c1;
-  margin-bottom: 1rem;
-}
-
-.site-footer p,
-.site-footer li {
-  color: #d6d9e0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.site-footer ul {
-  list-style: none;
-  padding: 0;
-}
-
-.site-footer li {
-  margin-bottom: 0.6rem;
-}
-.contact-card a {
-  color: #e6e6e6;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.contact-card a:hover {
-  color: #4de3c1;
-}
-.footer-links a {
-  color: #d6d9e0;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.footer-links a:hover {
-  color: #4de3c1;
-}
 /* HORIZONTAL SCROLL */
 .horizontal-scroll {
   display: flex;
@@ -435,6 +336,152 @@ html {
 
   .nav-links a {
     font-size: 0.9rem;
+  }
+}
+/* CONTACT */
+    .contact {
+      background: #1f3a3d;
+      color: #ffffff;
+      text-align: center;
+      padding: 5rem 5%
+    }
+
+    .contact h2 {
+      color: #ffffff;
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact p {
+      color: #e0e0e0;
+      max-width: 600px;
+      margin: 1rem auto 2rem;
+    }
+
+    .contact a {
+      display: inline-block;
+      padding: 12px 28px;
+      background: transparent;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+   .contact {
+  background: #4A5578;
+  padding: 5rem 6%;
+  color: #fff;
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+/* IMPORTANT CONTAINER */
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+.contact-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: #F26896;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.contact-card:nth-child(2) .contact-icon { background: #5CC9BC; }
+.contact-card:nth-child(3) .contact-icon { background: #B8D84E; }
+.contact-card:nth-child(4) .contact-icon { background: #F26896; }
+.contact-card:nth-child(5) .contact-icon { background: #4FC3F7; }
+.contact-card:nth-child(6) .contact-icon { background: #F26896; }
+
+.contact-label {
+  color: #5CC9BC;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: #5CC9BC;
+}
+footer {
+  background: #2C3454;
+  color: #fff;
+  padding: 3rem 6% 1.5rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-about h3,
+.footer-links h4 {
+  color: #5CC9BC;
+  margin-bottom: 1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+  color: #5CC9BC;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  opacity: 0.85;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 }
 
@@ -612,71 +659,71 @@ html {
 </section>
 
 </section>
-<section class="contact-area" id="contact">
+<section id="contact" class="contact">
+  <h2>Get In Touch</h2>
 
+  <div class="contact-container">
+    <div class="contact-grid">
 
-  <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="contact-label">Address</div>
+        <div class="contact-info">
+          Bo Min Yaung Business Tower -4C,<br>
+          Mingalar Taung Nyunt Township,<br>
+          Yangon City, Myanmar, 11221
+        </div>
+      </div>
 
-    <div class="contact-card">
-      <div class="icon pink">📍</div>
-      <h4>Address</h4>
-      <p>
-        Bo Min Yaung Business Tower -4C,<br>
-        Mingalar Taung Nyunt Township,<br>
-        Yangon City, Myanmar, 11221
-      </p>
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+        <div class="contact-label">Mobile</div>
+        <div class="contact-info">
+          <a href="tel:+9595128277">+95 9 512 8277</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="contact-label">WhatsApp</div>
+        <div class="contact-info">
+          <a href="https://wa.me/9595128277" target="_blank">+95 9 512 8277</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+        <div class="contact-label">Email</div>
+        <div class="contact-info">
+          <a href="mailto:office@raxmyanmar.com">office@raxmyanmar.com</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-globe"></i></div>
+        <div class="contact-label">Website</div>
+        <div class="contact-info">
+          <a href="https://www.raxmyanmar.com" target="_blank">www.raxmyanmar.com</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-brands fa-facebook"></i></div>
+        <div class="contact-label">Facebook</div>
+        <div class="contact-info">
+          <a href="https://www.facebook.com/raxmyanmar.co" target="_blank">
+            facebook.com/RAXMyanmar
+          </a>
+        </div>
+      </div>
+
     </div>
-
-    <div class="contact-card">
-      <div class="icon green">📞</div>
-      <h4>Mobile</h4>
-      <a href="tel:+9595128277">+95 9 512 8277</a>
-
-    </div>
-
-    <div class="contact-card">
-      <div class="icon lime">💬</div>
-      <h4>WhatsApp</h4>
-      <a href="https://wa.me/9595128277" target="_blank">
-  +95 9 512 8277
-</a>
-
-    </div>
-
-    <div class="contact-card">
-      <div class="icon pink">✉️</div>
-      <h4>Email</h4>
-      <a href="mailto:office@raxmyanmar.com">
-  office@raxmyanmar.com
-</a>
-
-    </div>
-
-    <div class="contact-card">
-      <div class="icon blue">🌐</div>
-      <h4>Website</h4>
-   <a href="https://www.raxmyanmar.com" target="_blank">
-  www.raxmyanmar.com
-</a>
-
-    </div>
-
-    <div class="contact-card">
-      <div class="icon pink">f</div>
-      <h4>Facebook</h4>
-      <a href="https://www.facebook.com/share/1GQmFJypBw/?mibextid=wwXIfr" target="_blank">
-  facebook.com/RAXMyanmar
-</a>
-
-    </div>
-    </div>
-
+  </div>
 </section>
-<footer class="site-footer">
+<footer>
+  <div class="footer-content">
 
-  <div class="footer-grid">
-
-    <div>
+    <div class="footer-about">
       <h3>RAX Myanmar Co., Ltd</h3>
       <p>
         Your trusted partner for premium seafood and fresh produce export
@@ -684,38 +731,37 @@ html {
       </p>
     </div>
 
-    <div>
+    <div class="footer-links">
       <h4>Quick Links</h4>
-      <ul class="footer-links">
-  <li><a href="https://raxmyanmar.com" target="_blank">About Us</a></li>
-  <li><a href="https://raxmyanmar.com" target="_blank">Products</a></li>
-  <li><a href="https://raxmyanmar.com" target="_blank">Our Standards</a></li>
-  <li><a href="https://raxmyanmar.com" target="_blank">Export Services</a></li>
-</ul>
-
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#standards">Our Standards</a></li>
+        <li><a href="#export">Export Services</a></li>
+      </ul>
     </div>
 
-    <div>
-      <div class="footer-links">
-                <h4>Contact</h4>
-                <ul>
-                    <li><a href="mailto:office@raxmyanmar.com">office@raxmyanmar.com</a></li>
-                    <li><a href="tel:+959512827">+95 9 512 8277</a></li>
-                    <li><a href="https://wa.me/9595128277">WhatsApp</a></li>
-                </ul>
-            </div>
-
-      
-     
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:office@raxmyanmar.com">office@raxmyanmar.com</a></li>
+        <li><a href="tel:+9595128277">+95 9 512 8277</a></li>
+        <li><a href="#contact">Get in Touch</a></li>
+      </ul>
     </div>
 
   </div>
 
+  <div class="footer-bottom">
+    &copy; 2024 RAX Myanmar Co., Ltd. All rights reserved.
+  </div>
 </footer>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 
 
 <body>
-
 
 
