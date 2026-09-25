@@ -1,438 +1,656 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RAX Myanmar Co., Ltd - Agro Product</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #2C3454; line-height: 1.6; background: #f7f8f6; }
-
-    /* Navigation */
-    nav { background: #f4a340; padding: 0.65rem 4%; box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
-    nav .container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    nav .logo img { height: 50px; vertical-align: middle; }
-    nav ul { list-style: none; display: flex; gap: 1.2rem; align-items: center; }
-    nav ul li a { color: white; text-decoration: none; font-weight: 600; padding: 0.45rem 1rem; border-radius: 999px; transition: background 0.2s, color 0.2s; }
-    nav ul li a:hover { background: rgba(255,255,255,0.15); }
-    nav ul li .cta-button { background: #f26896; color: #fff; padding: 0.55rem 1.3rem; }
-    nav ul li .cta-button:hover { background: #d4567a; }
-
-    /* Hero (not full-height) */
-    .hero {
-  position: relative;
-  min-height: 60vh;
-
-  background-image: url("argograss.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  padding: 5rem 2rem 4rem;
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-}
-
-    .hero::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
-    .hero .content { position: relative; z-index: 1; max-width: 900px; color: #fff; }
-    .hero h1 { font-size: clamp(2.1rem, 2vw + 1.5rem, 3rem); margin-bottom: 1rem; font-weight: 800; }
-    .hero p { font-size: 1.05rem; max-width: 760px; margin: 0 auto; color: #e6eaed; }
-
-    /* Page body placeholder to show content below hero */
-    .page-body { padding: 3rem 5% 5rem; background: #f7f8f6; }
-    .page-body .intro { max-width: 1100px; margin: 0 auto; }
-    .page-body h2 { font-size: 1.8rem; margin-bottom: 1rem; color: #1f3a3d; }
-    .page-body p { color: #4a5a5c; }
-
-    /* Responsive nav/hero */
-    @media (max-width: 768px) {
-      nav { padding: 0.6rem 3%; }
-      nav .container { flex-direction: column; gap: 0.8rem; }
-      nav ul { flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
-      nav ul li a { padding: 0.4rem 0.8rem; font-size: 13px; }
-      .hero { min-height: 50vh; padding: 4rem 1.2rem 3rem; }
-      .hero h1 { font-size: clamp(1.8rem, 4vw + 1rem, 2.6rem); }
-      .hero p { font-size: 0.98rem; }
-    }
-    .product-section {
-  padding: 4rem 6%;
-  background: #f9faf8;
-}
-
-.product-section h2 {
-  font-size: 2rem;
-  color: #1f3a3d;
-  margin-bottom: 0.5rem;
-}
-
-.section-desc {
-  max-width: 600px;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-/* HORIZONTAL SCROLL */
-.product-scroll {
-  display: flex;
-  gap: 1.8rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-  scroll-snap-type: x mandatory;
-}
-
-.product-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-
-.product-scroll::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 10px;
-}
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 2rem;
-}
-.product-card {
-  background: #f7f7f7;
-  border-radius: 16px;
-  padding: 1.2rem;
-}
-
-.product-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;   /* makes it a perfect square */
-  object-fit: cover;    /* fills the square */
-  border-radius: 12px;
-  background: #fff;
-  display: block;
-}
-/* CONTACT */
-    .contact {
-      background: #1f3a3d;
-      color: #ffffff;
-      text-align: center;
-      padding: 5rem 5%
-    }
-
-    .contact h2 {
-      color: #ffffff;
-      font-size: 2.2rem;
-      margin-bottom: 3rem;
-    }
-
-    .contact p {
-      color: #e0e0e0;
-      max-width: 600px;
-      margin: 1rem auto 2rem;
-    }
-
-    .contact a {
-      display: inline-block;
-      padding: 12px 28px;
-      background: transparent;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 600;
-    }
-   .contact {
-  background: #4A5578;
-  padding: 5rem 6%;
-  color: #fff;
-}
-
-.contact h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-}
-
-/* IMPORTANT CONTAINER */
-.contact-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.contact-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Products | RAX Myanmar</title>
+    <meta name="description" content="Fresh agro products from RAX Myanmar: ginger, dry ginger, dry plum and betel nut, sourced, processed and packed for export.">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --navy: #0b2a5b;
+            --blue: #0b3b7c;
+            --teal: #3fb8aa;         /* logo accent */
+            --gold: #f7b928;         /* button colour */
+            --gold-dark: #e5a410;
+            --ink: #2b3142;
+            --muted: #636a7c;
+            --line: #e3e7ee;
+            --paper: #ffffff;
+            --mist: #f3f5f9;
+            --panel: #f4f6f9;        /* background behind product photos */
+            --head: 'Oswald', 'Arial Narrow', sans-serif;
+            --body: 'Red Hat Text', 'Segoe UI', sans-serif;
+            --wrap: 1200px;
+            --header-h: 78px;
+            --jump-h: 56px;
         }
 
-.contact-card {
-  background: rgba(255,255,255,0.08);
-  border-radius: 14px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--body);
+            color: var(--ink);
+            background: var(--paper);
+            line-height: 1.75;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; }
+        .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
 
-.contact-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 1rem;
-  border-radius: 50%;
-  background: #F26896;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-}
+        h1, h2, h3, h4 {
+            font-family: var(--head);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.15;
+            color: var(--navy);
+        }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; }
+        h2 strong { font-weight: 500; }
 
-.contact-card:nth-child(2) .contact-icon { background: #5CC9BC; }
-.contact-card:nth-child(3) .contact-icon { background: #B8D84E; }
-.contact-card:nth-child(4) .contact-icon { background: #F26896; }
-.contact-card:nth-child(5) .contact-icon { background: #4FC3F7; }
-.contact-card:nth-child(6) .contact-icon { background: #F26896; }
+        .eyebrow {
+            display: inline-block;
+            font-family: var(--head);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+        .lead { font-size: 1.2rem; font-weight: 300; color: var(--muted); }
 
-.contact-label {
-  color: #5CC9BC;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
+        .btn {
+            display: inline-block;
+            font-family: var(--head);
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 0.95rem 2.2rem;
+            border: 1px solid var(--gold);
+            background: var(--gold);
+            color: var(--navy);
+            transition: background 0.25s, color 0.25s, border-color 0.25s;
+        }
+        .btn:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
+        .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.7); }
+        .btn-ghost:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
 
-.contact-info a {
-  color: #fff;
-  text-decoration: none;
-}
+        /* ---------- Header (same as home page) ---------- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--line);
+        }
+        .site-header .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: var(--header-h);
+        }
+        .brand img { height: 50px; width: auto; }
+        .menu { display: flex; align-items: center; gap: 2.2rem; list-style: none; }
+        .menu a {
+            font-family: var(--head);
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--navy);
+            position: relative;
+            padding: 0.3rem 0;
+        }
+        .menu a:not(.btn)::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 100%; height: 1px;
+            background: var(--teal);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s;
+        }
+        .menu a:not(.btn):hover::after,
+        .menu a[aria-current="page"]::after { transform: scaleX(1); }
+        .menu .btn { padding: 0.65rem 1.4rem; color: var(--navy); }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 0;
+            font-size: 1.5rem;
+            color: var(--navy);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
 
-.contact-info a:hover {
-  color: #5CC9BC;
-}
-footer {
-  background: #2C3454;
-  color: #fff;
-  padding: 3rem 6% 1.5rem;
-}
+        /* ---------- Page hero ---------- */
+        .page-hero {
+            position: relative;
+            color: #fff;
+            min-height: 62vh;
+            display: flex;
+            align-items: flex-end;
+            background:
+                linear-gradient(180deg, rgba(8,25,55,0.45) 0%, rgba(8,25,55,0.55) 50%, rgba(8,25,55,0.85) 100%),
+                url("argograss.jpg") center / cover no-repeat;
+        }
+        .page-hero .wrap { width: 100%; padding-top: 6rem; padding-bottom: 4.5rem; }
+        .crumbs {
+            font-family: var(--head);
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 1.2rem;
+        }
+        .crumbs a { text-decoration: none; }
+        .crumbs a:hover { color: var(--gold); }
+        .crumbs span { margin: 0 0.6rem; opacity: 0.6; }
+        .page-hero h1 {
+            color: #fff;
+            font-weight: 300;
+            font-size: clamp(2.6rem, 6vw, 4.6rem);
+            text-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+            margin-bottom: 1.2rem;
+        }
+        .page-hero h1 strong { font-weight: 500; }
+        .page-hero p { max-width: 620px; font-size: 1.15rem; font-weight: 300; opacity: 0.92; }
 
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
-}
+        /* ---------- Jump bar (product name index) ---------- */
+        .jump {
+            position: sticky;
+            top: var(--header-h);
+            z-index: 900;
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+        }
+        .jump .wrap { display: flex; align-items: center; height: var(--jump-h); gap: 1.5rem; }
+        .jump-label {
+            flex: none;
+            font-family: var(--head);
+            font-size: 0.75rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--teal);
+        }
+        .jump ul {
+            display: flex;
+            gap: 1.6rem;
+            list-style: none;
+            overflow-x: auto;
+            scrollbar-width: none;
+            white-space: nowrap;
+            height: 100%;
+            align-items: center;
+            -webkit-mask-image: linear-gradient(90deg, #000 92%, transparent);
+                    mask-image: linear-gradient(90deg, #000 92%, transparent);
+            padding-right: 2rem;
+            position: relative;
+        }
+        .jump ul::-webkit-scrollbar { display: none; }
+        .jump a {
+            font-family: var(--head);
+            font-size: 0.88rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--muted);
+            padding: 0.3rem 0;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        .jump a:hover { color: var(--navy); }
+        .jump a.active { color: var(--navy); border-bottom-color: var(--gold); }
+        .jump .sep { color: var(--line); }
 
-.footer-about h3,
-.footer-links h4 {
-  color: #5CC9BC;
-  margin-bottom: 1rem;
-}
+        /* ---------- Product sections ---------- */
+        .section { padding: 6rem 0; scroll-margin-top: calc(var(--header-h) + var(--jump-h)); }
+        .section-mist { background: var(--mist); }
+        .section-head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--line);
+        }
+        .section-head > div { max-width: 640px; }
+        .section-head h2 { margin-bottom: 1rem; }
+        .count {
+            font-family: var(--head);
+            font-weight: 300;
+            font-size: 3.2rem;
+            line-height: 1;
+            color: var(--navy);
+            text-align: right;
+        }
+        .count small {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.78rem;
+            font-weight: 400;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--teal);
+        }
 
-.footer-links ul {
-  list-style: none;
-}
+        /* One row per product, image alternating left / right */
+        .fish {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.5rem;
+            align-items: center;
+            padding: 2.5rem 0;
+            scroll-margin-top: calc(var(--header-h) + var(--jump-h) + 1rem);
+        }
+        .fish + .fish { border-top: 1px solid var(--line); }
+        .fish:nth-child(even) .fish-img { order: 2; }
 
-.footer-links ul li {
-  margin-bottom: 0.6rem;
-}
+        .fish-img {
+            position: relative;
+            background: var(--panel);
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+        }
+        .section-mist .fish-img { background: #fff; }
+        .fish-img img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;           /* real photos fill the frame edge to edge */
+            transition: transform 0.7s ease;
+        }
+        .fish:hover .fish-img img { transform: scale(1.04); }
 
-.footer-links ul li a {
-  color: #fff;
-  text-decoration: none;
-}
+        .fish-no {
+            font-family: var(--head);
+            font-size: 0.85rem;
+            letter-spacing: 0.25em;
+            color: var(--teal);
+        }
+        .fish h3 {
+            font-size: clamp(2rem, 3.4vw, 2.8rem);
+            font-weight: 400;
+            margin: 0.4rem 0 1.4rem;
+        }
+        .fish .k {
+            font-family: var(--head);
+            font-size: 0.78rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.8rem;
+        }
+        .sizes { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
+        .sizes li {
+            font-family: var(--head);
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            color: var(--navy);
+            border: 1px solid var(--line);
+            background: #fff;
+            padding: 0.35rem 0.9rem;
+        }
+        .fish-ask {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.6rem;
+            font-family: var(--head);
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--blue);
+        }
+        .fish-ask i { transition: transform 0.25s; }
+        .fish-ask:hover i { transform: translateX(4px); }
 
-.footer-links ul li a:hover {
-  color: #5CC9BC;
-}
+        /* ---------- Enquiry band ---------- */
+        .enquire {
+            color: #fff;
+            padding: 6rem 0;
+            text-align: center;
+            background:
+                linear-gradient(rgba(8,25,55,0.88), rgba(8,25,55,0.88)),
+                url("ginger.jpg") center / cover no-repeat;
+            scroll-margin-top: var(--header-h);
+        }
+        .enquire h2 { color: #fff; margin-bottom: 1rem; }
+        .enquire .lead { color: rgba(255,255,255,0.8); max-width: 620px; margin: 0 auto 2.5rem; }
+        .enquire-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
 
-.footer-bottom {
-  text-align: center;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  opacity: 0.85;
-}
+        /* ---------- Footer (same as home page) ---------- */
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.72);
+            padding: 5rem 0 2rem;
+            font-size: 0.97rem;
+        }
+        .foot-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+        .foot-logo { display: inline-block; background: #fff; padding: 0.6rem 0.9rem; margin-bottom: 1.4rem; }
+        .foot-logo img { height: 42px; width: auto; }
+        footer h4 { color: #fff; font-size: 0.95rem; letter-spacing: 0.18em; margin-bottom: 1.2rem; }
+        footer ul { list-style: none; }
+        footer li { margin-bottom: 0.6rem; }
+        footer a { text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--teal); }
+        .socials { display: flex; gap: 0.8rem; margin-top: 1.5rem; }
+        .socials a {
+            width: 38px; height: 38px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #fff;
+        }
+        .socials a:hover { border-color: var(--teal); }
+        .foot-bottom { padding-top: 2rem; font-size: 0.85rem; text-align: center; opacity: 0.7; }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-}
+        /* Reveal on scroll (only when JS is running) */
+        .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .js .reveal.in { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .js .reveal { opacity: 1; transform: none; transition: none; }
+        }
 
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1024px) {
+            .menu { gap: 1.4rem; }
+            .menu a { font-size: 0.85rem; }
+            .fish { gap: 3rem; }
+        }
 
-  </style>
+        @media (max-width: 900px) {
+            .menu-toggle { display: block; }
+            .menu {
+                position: absolute;
+                top: var(--header-h); left: 0; right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                background: #fff;
+                border-bottom: 1px solid var(--line);
+                padding: 0.5rem 24px 1.5rem;
+                display: none;
+            }
+            .menu.open { display: flex; }
+            .menu li { border-bottom: 1px solid var(--line); }
+            .menu li:last-child { border: 0; padding-top: 1.2rem; }
+            .menu a { display: block; padding: 1rem 0; font-size: 1rem; }
+            .menu a:not(.btn)::after { display: none; }
+            .menu .btn { text-align: center; }
+
+            .section { padding: 4.5rem 0; }
+            .fish { grid-template-columns: 1fr; gap: 1.6rem; padding: 2.5rem 0; }
+            .fish:nth-child(even) .fish-img { order: 0; }
+            .fish h3 { margin-bottom: 1rem; }
+            .foot-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+            .foot-grid > :first-child { grid-column: 1 / -1; }
+        }
+
+        @media (max-width: 600px) {
+            :root { --header-h: 68px; --jump-h: 50px; }
+            body { font-size: 16px; }
+            .wrap { padding: 0 16px; }
+            .brand img { height: 40px; }
+            .menu { padding: 0.5rem 16px 1.5rem; }
+            .page-hero { min-height: 52vh; }
+            .jump-label { display: none; }
+            .count { text-align: left; }
+            .enquire-actions .btn { flex: 1 1 100%; }
+            .foot-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-  <nav>
-    <div class="container">
-      <a href="index.html" class="logo">
-        <img src="RAX offical logo.png" alt="RAX Logo">
-      </a>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a class="cta-button" href="#contact">Contact Us</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <section class="hero">
-    <div class="content">
-      <h1>Our Product List</h1>
-      <p>RAX Myanmar supplies premium-quality fresh agro products, including farm-grown vegetables and produce, handled under strict quality control and prepared to meet international export standards..</p>
-    </div>
-  </section>
-
-  <section class="product-section">
-  <h2>Agro-product</h2>
-  <p class="section-desc">
-    Carefully sourced fresh agro products, processed and packed to meet international export standards.
-  </p>
-
-  <div class="product-grid">
-
-    <div class="product-card">
-      <img src="gingert.jpg" alt="Ginger">
-      <h3>Ginger</h3>
-      <p><strong>Sizes:</strong> N/A</p>
-    </div>
-
-    <div class="product-card">
-      <img src="dry ginnger.jpg" alt="Dry Ginger">
-      <h3>Dry Ginger</h3>
-      <p><strong>Sizes:</strong> N/A</p>
-    </div>
-
-    <div class="product-card">
-      <img src="dry plum.jpg" alt="Dry Ginger">
-      <h3>Dry plum</h3>
-      <p><strong>Sizes:</strong> N/A</p>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="product-section">
-  <h2>seeds and nuts</h2>
-  <p class="section-desc">
-    High-quality seeds and nuts, carefully sourced, processed, and packed in compliance with international export standards.
-  </p>
-
-  <div class="product-grid">
-
-    <div class="product-card">
-      <img src="bettle nut.jpg" alt="Ginger">
-      <h3>Betel nut</h3>
-      <p><strong>Sizes:</strong> N/A</p>
-    </div>
-
-  </div>
-</section>
-</section>
-<!-- Contact Section -->
-<section id="contact" class="contact">
-  <h2>Get In Touch</h2>
-
-  <div class="contact-container">
-    <div class="contact-grid">
-
-      <div class="contact-card">
-        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-        <div class="contact-label">Address</div>
-        <div class="contact-info">
-          Bo Min Yaung Business Tower -4C,<br>
-          Mingalar Taung Nyunt Township,<br>
-          Yangon City, Myanmar, 11221
+    <!-- Header -->
+    <header class="site-header">
+        <div class="wrap">
+            <a href="index.html" class="brand" aria-label="RAX Myanmar home">
+                <img src="RAX offical logo.png" alt="RAX Myanmar Co., Ltd.">
+            </a>
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="menu" id="menu">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="products.html">Fish Products</a></li>
+                <li><a href="agro.html" aria-current="page">Agro Products</a></li>
+                <li><a href="index.html#standards">Our Standards</a></li>
+                <li><a href="index.html#export">Export Services</a></li>
+                <li><a href="#contact" class="btn">Contact Us</a></li>
+            </ul>
         </div>
-      </div>
+    </header>
 
-      <div class="contact-card">
-        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-        <div class="contact-label">Mobile</div>
-        <div class="contact-info">
-          <a href="tel:+9595128277">+95 9 512 8277</a>
+    <main>
+
+        <!-- Page hero -->
+        <section class="page-hero">
+            <div class="wrap">
+                <div class="crumbs"><a href="index.html">Home</a><span>/</span>Products<span>/</span>Agro</div>
+                <h1>Our <strong>Agro Products</strong></h1>
+                <p>RAX Myanmar supplies premium-quality fresh agro products, including farm-grown vegetables and produce, handled under strict quality control and prepared to meet international export standards.</p>
+            </div>
+        </section>
+
+        <!-- Jump bar: add a link here when you add a new product below -->
+        <nav class="jump" aria-label="Jump to a product">
+            <div class="wrap">
+                <span class="jump-label">Browse</span>
+                <ul>
+                    <li><a href="#ginger">Ginger</a></li>
+                    <li><a href="#dry-ginger">Dry Ginger</a></li>
+                    <li><a href="#dry-plum">Dry Plum</a></li>
+                    <li class="sep">|</li>
+                    <li><a href="#betel-nut">Betel Nut</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Agro products -->
+        <section id="agro" class="section">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="eyebrow">Agro products</span>
+                        <h2>Grown in <strong>Myanmar</strong></h2>
+                        <p class="lead">Carefully sourced fresh agro products, processed and packed to meet international export standards.</p>
+                    </div>
+                    <div class="count">3<small>Products</small></div>
+                </div>
+
+                <div class="fish-list">
+                    <article class="fish reveal" id="ginger">
+                        <div class="fish-img"><img src="gingert.jpg" alt="Fresh ginger" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">01</span>
+                            <h3>Ginger</h3>
+                            <div class="k">Sizes &amp; packing</div>
+                            <ul class="sizes"><li>On request</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="dry-ginger">
+                        <div class="fish-img"><img src="dry ginnger.jpg" alt="Dry ginger" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">02</span>
+                            <h3>Dry Ginger</h3>
+                            <div class="k">Sizes &amp; packing</div>
+                            <ul class="sizes"><li>On request</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="dry-plum">
+                        <div class="fish-img"><img src="dry plum.jpg" alt="Dry plum" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">03</span>
+                            <h3>Dry Plum</h3>
+                            <div class="k">Sizes &amp; packing</div>
+                            <ul class="sizes"><li>On request</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seeds & nuts -->
+        <section id="seeds" class="section section-mist">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="eyebrow">Seeds &amp; nuts</span>
+                        <h2>Seeds <strong>&amp; nuts</strong></h2>
+                        <p class="lead">High-quality seeds and nuts, carefully sourced, processed, and packed in compliance with international export standards.</p>
+                    </div>
+                    <div class="count">1<small>Product</small></div>
+                </div>
+
+                <div class="fish-list">
+                    <article class="fish reveal" id="betel-nut">
+                        <div class="fish-img"><img src="bettle nut.jpg" alt="Betel nut" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">01</span>
+                            <h3>Betel Nut</h3>
+                            <div class="k">Sizes &amp; packing</div>
+                            <ul class="sizes"><li>On request</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enquiry -->
+        <section id="contact" class="enquire">
+            <div class="wrap reveal">
+                <span class="eyebrow">Enquiries</span>
+                <h2>Interested in our <strong>agro products?</strong></h2>
+                <p class="lead">Custom orders are available upon request. Tell us the product, size and quantity and we'll send you a quote.</p>
+                <div class="enquire-actions">
+                    <a href="https://wa.me/9595128277" target="_blank" rel="noopener" class="btn"><i class="fa-brands fa-whatsapp"></i>&nbsp; WhatsApp Myanmar</a>
+                    <a href="https://wa.me/966507408910" target="_blank" rel="noopener" class="btn"><i class="fa-brands fa-whatsapp"></i>&nbsp; WhatsApp Saudi Arabia</a>
+                    <a href="mailto:office@raxmyanmar.com" class="btn btn-ghost"><i class="fa-regular fa-envelope"></i>&nbsp; Email us</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrap">
+            <div class="foot-grid">
+                <div>
+                    <a href="index.html" class="foot-logo"><img src="RAX offical logo.png" alt="RAX Myanmar Co., Ltd."></a>
+                    <p>Your trusted partner for premium seafood and fresh produce export from Myanmar to the Middle East and Southeast Asia.</p>
+                    <div class="socials">
+                        <a href="https://www.facebook.com/raxmyanmar.co" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/9595128277" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="mailto:office@raxmyanmar.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="products.html">Fish Products</a></li>
+                        <li><a href="agro.html">Agro Products</a></li>
+                        <li><a href="index.html#export">Export Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:office@raxmyanmar.com">office@raxmyanmar.com</a></li>
+                        <li><a href="tel:+9595128277">+95 9 512 8277</a> (Myanmar)</li>
+                        <li><a href="tel:+966507408910">+966 50 740 8910</a> (KSA)</li>
+                        <li>Bo Min Yaung Business Tower -4C, Mingalar Taung Nyunt Township, Yangon, Myanmar 11221</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot-bottom">
+                &copy; <span id="year">2026</span> RAX Myanmar Co., Ltd. All rights reserved.
+            </div>
         </div>
-      </div>
+    </footer>
 
-      <div class="contact-card">
-        <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
-        <div class="contact-label">WhatsApp</div>
-        <div class="contact-info">
-          <a href="https://wa.me/9595128277" target="_blank">+95 9 512 8277</a>
-        </div>
-      </div>
+    <script>
+        // Mobile menu
+        const toggle = document.querySelector('.menu-toggle');
+        const menu = document.getElementById('menu');
+        toggle.addEventListener('click', () => {
+            const open = menu.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open);
+            toggle.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+        });
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            menu.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }));
 
-      <div class="contact-card">
-        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-        <div class="contact-label">Email</div>
-        <div class="contact-info">
-          <a href="mailto:office@raxmyanmar.com">office@raxmyanmar.com</a>
-        </div>
-      </div>
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-      <div class="contact-card">
-        <div class="contact-icon"><i class="fa-solid fa-globe"></i></div>
-        <div class="contact-label">Website</div>
-        <div class="contact-info">
-          <a href="https://www.raxmyanmar.com" target="_blank">www.raxmyanmar.com</a>
-        </div>
-      </div>
+        if ('IntersectionObserver' in window) {
+            // Reveal on scroll
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (!e.isIntersecting) return;
+                    e.target.classList.add('in');
+                    io.unobserve(e.target);
+                });
+            }, { threshold: 0.12 });
+            document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-      <div class="contact-card">
-        <div class="contact-icon"><i class="fa-brands fa-facebook"></i></div>
-        <div class="contact-label">Facebook</div>
-        <div class="contact-info">
-          <a href="https://www.facebook.com/raxmyanmar.co" target="_blank">
-            facebook.com/RAXMyanmar
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<footer>
-  <div class="footer-content">
-
-    <div class="footer-about">
-      <h3>RAX Myanmar Co., Ltd</h3>
-      <p>
-        Your trusted partner for premium seafood and fresh produce export
-        from Myanmar to the Middle East and Southeast Asia.
-      </p>
-    </div>
-
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#standards">Our Standards</a></li>
-        <li><a href="#export">Export Services</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-links">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:office@raxmyanmar.com">office@raxmyanmar.com</a></li>
-        <li><a href="tel:+9595128277">+95 9 512 8277</a></li>
-        <li><a href="#contact">Get in Touch</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    &copy; 2024 RAX Myanmar Co., Ltd. All rights reserved.
-  </div>
-</footer>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  </main>
+            // Highlight the product currently on screen in the jump bar
+            const links = {};
+            document.querySelectorAll('.jump a').forEach(a => links[a.hash.slice(1)] = a);
+            const bar = document.querySelector('.jump ul');
+            const spy = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (!e.isIntersecting) return;
+                    const link = links[e.target.id];
+                    if (!link) return;
+                    Object.values(links).forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                    bar.scrollTo({ left: link.offsetLeft - bar.clientWidth / 3, behavior: 'smooth' });
+                });
+            }, { rootMargin: '-45% 0px -50% 0px' });
+            document.querySelectorAll('.fish').forEach(el => spy.observe(el));
+        } else {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+        }
+    </script>
 </body>
 </html>
