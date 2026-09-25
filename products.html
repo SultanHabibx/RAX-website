@@ -1,768 +1,861 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product List | RAX Myanmar</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, sans-serif;
-      background: #f7f8f6;
-      color: #2f3e3f;
-    }
-
-  h1 {color: #ffffff}
-    h2 {
-      color: #1f3a3d;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      color: #ffffff;
-      line-height: 1.7;
-    }
-
-    /* SECTION BASE */
-    section {
-      padding: 4rem 6%;
-    }
-
-    /* HERO */
-    /* HERO LAYOUT */
-.hero {
-  background: linear-gradient(135deg, #fff7ee, #ffffff);
-}
-
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  align-items: center;
-  gap: 3rem;
-}
-
-/* IMAGE LEFT */
-.hero-image img {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  border-radius: 24px;
-}
-
-/* TEXT – SAME POSITION FEEL */
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero-content p {
-  max-width: 650px;
-  font-size: 1.1rem;
-}
-@media (max-width: 900px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-image img {
-    height: 260px;
-  }
-
-  .hero-content {
-    text-align: center;
-  }
-}
-.section-head p {
-  color: #000000;
-}
-
-
-/* LEFT TEXT */
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero-content p {
-  max-width: 600px;
-  font-size: 1.1rem;
-}
-/* IMAGE RIGHT */
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 24px;
-}
-
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      max-width: 650px;
-      font-size: 1.1rem;
-    }
-
-    /* PRODUCT SECTIONS */
-    .product-section {
-      background: #f7f8f6;
-    }
-
-    .section-head {
-      margin-bottom: 2.5rem;
-      max-width: 700px;
-    }
-
-    .section-head h2 {
-      font-size: 2.4rem;
-      margin-bottom: 0.5rem;
-    }
-
-    /* PRODUCT GRID */
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-
-    .product-item {
-      background: transparent;
-    }
-
-    .product-item img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 16px;
-      margin-bottom: 0.8rem;
-    }
-
-    .product-item h3 {
-      margin: 0.3rem 0;
-      font-size: 1.1rem;
-      color: #1f3a3d;
-    }
-
-    .sizes {
-      font-size: 0.95rem;
-      color: #666;
-    }
-
-    
-     
-
-/* ICONS */
-.icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  font-size: 1.4rem;
-  color: #fff;
-}
-
-.icon.pink { background: #f26a8d; }
-.icon.green { background: #4dd0a6; }
-.icon.lime { background: #b7d53c; }
-.icon.blue { background: #4db3ff; }
-.site-footer {
-  background: #2f3756;
-  padding: 3.5rem 6%;
-  color: #ffffff;
-}
-
-
-/* HORIZONTAL SCROLL */
-.horizontal-scroll {
-  display: flex;
-  gap: 2rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-  scroll-snap-type: x mandatory;
-}
-
-.horizontal-scroll::-webkit-scrollbar {
-  height: 8px;
-}
-
-.horizontal-scroll::-webkit-scrollbar-thumb {
-  background: #cfcfcf;
-  border-radius: 10px;
-}
-
-.horizontal-item {
-  min-width: 300px;
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-}
-
-/* OPTIONAL: smoother feel */
-.horizontal-scroll {
-  -webkit-overflow-scrolling: touch;
-}
-.site-header {
-  background: #f4a340;
-  padding: 0.8rem 6%;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo img {
-  height: 42px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 500;
-}
-
-.contact-btn {
-  background: #f26a8d;
-  padding: 0.5rem 1.2rem;
-  border-radius: 8px;
-}
-.hero-banner {
-  position: relative;
-  background: url(fisherybanner.jpg)no-repeat center/cover;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 6% 2rem; /* small bottom padding only */
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.55)
-  );
-}
-
-.hero-content {
-  position: relative;
-  max-width: 900px;
-  color: #ffffff;
-}
-
-.hero-content h1 {
-  font-size: 3.2rem;
-  font-weight: 700;
-  margin-bottom: 1.2rem;
-}
-
-.hero-content p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 2rem;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.btn-primary {
-  background: #f26a8d;
-  color: #ffffff;
-  padding: 0.9rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.btn-outline {
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  padding: 0.85rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-}
-@media (max-width: 900px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 1rem;
-  }
-}
-.product-item img {
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  background: #f2f2f2;
-  border-radius: 16px;
-  padding: 10px;
-}
-html {
-  scroll-behavior: smooth;
-}
-@media (max-width: 900px) {
-  .contact-btn {
-    padding: 0.4rem 0.9rem;
-    font-size: 0.9rem;
-  }
-
-  .nav-links a {
-    font-size: 0.9rem;
-  }
-}
-/* CONTACT */
-    .contact {
-      background: #1f3a3d;
-      color: #ffffff;
-      text-align: center;
-      padding: 5rem 5%
-    }
-
-    .contact h2 {
-      color: #ffffff;
-      font-size: 2.2rem;
-      margin-bottom: 3rem;
-    }
-
-    .contact p {
-      color: #e0e0e0;
-      max-width: 600px;
-      margin: 1rem auto 2rem;
-    }
-
-    .contact a {
-      display: inline-block;
-      padding: 12px 28px;
-      background: transparent;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 600;
-    }
-   .contact {
-  background: #4A5578;
-  padding: 5rem 6%;
-  color: #fff;
-}
-
-.contact h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-}
-
-/* IMPORTANT CONTAINER */
-.contact-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.contact-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Products | RAX Myanmar</title>
+    <meta name="description" content="Fresh and dry fish from RAX Myanmar: Rohu, Hilsa, Pomfret, Tilapia, Spanish Mackerel and more, graded and packed for export.">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --navy: #0b2a5b;
+            --blue: #0b3b7c;
+            --teal: #3fb8aa;         /* logo accent */
+            --gold: #f7b928;         /* button colour */
+            --gold-dark: #e5a410;
+            --ink: #2b3142;
+            --muted: #636a7c;
+            --line: #e3e7ee;
+            --paper: #ffffff;
+            --mist: #f3f5f9;
+            --panel: #f4f6f9;        /* background behind product photos */
+            --head: 'Oswald', 'Arial Narrow', sans-serif;
+            --body: 'Red Hat Text', 'Segoe UI', sans-serif;
+            --wrap: 1200px;
+            --header-h: 78px;
+            --jump-h: 56px;
         }
 
-.contact-card {
-  background: rgba(255,255,255,0.08);
-  border-radius: 14px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--body);
+            color: var(--ink);
+            background: var(--paper);
+            line-height: 1.75;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; }
+        .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
 
-.contact-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 1rem;
-  border-radius: 50%;
-  background: #F26896;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-}
+        h1, h2, h3, h4 {
+            font-family: var(--head);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.15;
+            color: var(--navy);
+        }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; }
+        h2 strong { font-weight: 500; }
 
-.contact-card:nth-child(2) .contact-icon { background: #5CC9BC; }
-.contact-card:nth-child(3) .contact-icon { background: #B8D84E; }
-.contact-card:nth-child(4) .contact-icon { background: #F26896; }
-.contact-card:nth-child(5) .contact-icon { background: #4FC3F7; }
-.contact-card:nth-child(6) .contact-icon { background: #F26896; }
+        .eyebrow {
+            display: inline-block;
+            font-family: var(--head);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+        .lead { font-size: 1.2rem; font-weight: 300; color: var(--muted); }
 
-.contact-label {
-  color: #5CC9BC;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
+        .btn {
+            display: inline-block;
+            font-family: var(--head);
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 0.95rem 2.2rem;
+            border: 1px solid var(--gold);
+            background: var(--gold);
+            color: var(--navy);
+            transition: background 0.25s, color 0.25s, border-color 0.25s;
+        }
+        .btn:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
+        .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.7); }
+        .btn-ghost:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
 
-.contact-info a {
-  color: #fff;
-  text-decoration: none;
-}
+        /* ---------- Header (same as home page) ---------- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--line);
+        }
+        .site-header .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: var(--header-h);
+        }
+        .brand img { height: 50px; width: auto; }
+        .menu { display: flex; align-items: center; gap: 2.2rem; list-style: none; }
+        .menu a {
+            font-family: var(--head);
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--navy);
+            position: relative;
+            padding: 0.3rem 0;
+        }
+        .menu a:not(.btn)::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 100%; height: 1px;
+            background: var(--teal);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s;
+        }
+        .menu a:not(.btn):hover::after,
+        .menu a[aria-current="page"]::after { transform: scaleX(1); }
+        .menu .btn { padding: 0.65rem 1.4rem; color: var(--navy); }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 0;
+            font-size: 1.5rem;
+            color: var(--navy);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
 
-.contact-info a:hover {
-  color: #5CC9BC;
-}
-footer {
-  background: #2C3454;
-  color: #fff;
-  padding: 3rem 6% 1.5rem;
-}
+        /* ---------- Page hero ---------- */
+        .page-hero {
+            position: relative;
+            color: #fff;
+            min-height: 62vh;
+            display: flex;
+            align-items: flex-end;
+            background:
+                linear-gradient(180deg, rgba(8,25,55,0.45) 0%, rgba(8,25,55,0.55) 50%, rgba(8,25,55,0.85) 100%),
+                url("fisherybanner.jpg") center / cover no-repeat;
+        }
+        .page-hero .wrap { width: 100%; padding-top: 6rem; padding-bottom: 4.5rem; }
+        .crumbs {
+            font-family: var(--head);
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 1.2rem;
+        }
+        .crumbs a { text-decoration: none; }
+        .crumbs a:hover { color: var(--gold); }
+        .crumbs span { margin: 0 0.6rem; opacity: 0.6; }
+        .page-hero h1 {
+            color: #fff;
+            font-weight: 300;
+            font-size: clamp(2.6rem, 6vw, 4.6rem);
+            text-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+            margin-bottom: 1.2rem;
+        }
+        .page-hero h1 strong { font-weight: 500; }
+        .page-hero p { max-width: 620px; font-size: 1.15rem; font-weight: 300; opacity: 0.92; }
 
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
-}
+        /* ---------- Jump bar (fish name index) ---------- */
+        .jump {
+            position: sticky;
+            top: var(--header-h);
+            z-index: 900;
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+        }
+        .jump .wrap { display: flex; align-items: center; height: var(--jump-h); gap: 1.5rem; }
+        .jump-label {
+            flex: none;
+            font-family: var(--head);
+            font-size: 0.75rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--teal);
+        }
+        .jump ul {
+            display: flex;
+            gap: 1.6rem;
+            list-style: none;
+            overflow-x: auto;
+            scrollbar-width: none;
+            white-space: nowrap;
+            height: 100%;
+            align-items: center;
+            -webkit-mask-image: linear-gradient(90deg, #000 92%, transparent);
+                    mask-image: linear-gradient(90deg, #000 92%, transparent);
+            padding-right: 2rem;
+            position: relative;
+        }
+        .jump ul::-webkit-scrollbar { display: none; }
+        .jump a {
+            font-family: var(--head);
+            font-size: 0.88rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--muted);
+            padding: 0.3rem 0;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        .jump a:hover { color: var(--navy); }
+        .jump a.active { color: var(--navy); border-bottom-color: var(--gold); }
+        .jump .sep { color: var(--line); }
 
-.footer-about h3,
-.footer-links h4 {
-  color: #5CC9BC;
-  margin-bottom: 1rem;
-}
+        /* ---------- Product sections ---------- */
+        .section { padding: 6rem 0; scroll-margin-top: calc(var(--header-h) + var(--jump-h)); }
+        .section-mist { background: var(--mist); }
+        .section-head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--line);
+        }
+        .section-head > div { max-width: 640px; }
+        .section-head h2 { margin-bottom: 1rem; }
+        .count {
+            font-family: var(--head);
+            font-weight: 300;
+            font-size: 3.2rem;
+            line-height: 1;
+            color: var(--navy);
+            text-align: right;
+        }
+        .count small {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.78rem;
+            font-weight: 400;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--teal);
+        }
 
-.footer-links ul {
-  list-style: none;
-}
+        /* One row per fish, image alternating left / right */
+        .fish {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.5rem;
+            align-items: center;
+            padding: 2.5rem 0;
+            scroll-margin-top: calc(var(--header-h) + var(--jump-h) + 1rem);
+        }
+        .fish + .fish { border-top: 1px solid var(--line); }
+        .fish:nth-child(even) .fish-img { order: 2; }
 
-.footer-links ul li {
-  margin-bottom: 0.6rem;
-}
+        .fish-img {
+            position: relative;
+            background: var(--panel);
+            aspect-ratio: 3 / 2;
+            overflow: hidden;
+        }
+        .section-mist .fish-img { background: #fff; }
+        .fish-img img {
+            position: absolute;
+            inset: 1.8rem;               /* breathing room around every photo */
+            width: calc(100% - 3.6rem);
+            height: calc(100% - 3.6rem);
+            object-fit: contain;         /* always shows the whole photo, never crops */
+            mix-blend-mode: multiply;    /* melts white photo backgrounds into the panel */
+            transition: transform 0.7s ease;
+        }
+        .fish:hover .fish-img img { transform: scale(1.04); }
 
-.footer-links ul li a {
-  color: #fff;
-  text-decoration: none;
-}
+        .fish-no {
+            font-family: var(--head);
+            font-size: 0.85rem;
+            letter-spacing: 0.25em;
+            color: var(--teal);
+        }
+        .fish h3 {
+            font-size: clamp(2rem, 3.4vw, 2.8rem);
+            font-weight: 400;
+            margin: 0.4rem 0 1.4rem;
+        }
+        .fish .k {
+            font-family: var(--head);
+            font-size: 0.78rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.8rem;
+        }
+        .sizes { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
+        .sizes li {
+            font-family: var(--head);
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            color: var(--navy);
+            border: 1px solid var(--line);
+            background: #fff;
+            padding: 0.35rem 0.9rem;
+        }
+        .fish-ask {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.6rem;
+            font-family: var(--head);
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--blue);
+        }
+        .fish-ask i { transition: transform 0.25s; }
+        .fish-ask:hover i { transform: translateX(4px); }
 
-.footer-links ul li a:hover {
-  color: #5CC9BC;
-}
+        /* ---------- Enquiry band ---------- */
+        .enquire {
+            color: #fff;
+            padding: 6rem 0;
+            text-align: center;
+            background:
+                linear-gradient(rgba(8,25,55,0.88), rgba(8,25,55,0.88)),
+                url("seacargo44.jpg") center / cover no-repeat;
+            scroll-margin-top: var(--header-h);
+        }
+        .enquire h2 { color: #fff; margin-bottom: 1rem; }
+        .enquire .lead { color: rgba(255,255,255,0.8); max-width: 620px; margin: 0 auto 2.5rem; }
+        .enquire-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
 
-.footer-bottom {
-  text-align: center;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  opacity: 0.85;
-}
+        /* ---------- Footer (same as home page) ---------- */
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.72);
+            padding: 5rem 0 2rem;
+            font-size: 0.97rem;
+        }
+        .foot-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+        .foot-logo { display: inline-block; background: #fff; padding: 0.6rem 0.9rem; margin-bottom: 1.4rem; }
+        .foot-logo img { height: 42px; width: auto; }
+        footer h4 { color: #fff; font-size: 0.95rem; letter-spacing: 0.18em; margin-bottom: 1.2rem; }
+        footer ul { list-style: none; }
+        footer li { margin-bottom: 0.6rem; }
+        footer a { text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--teal); }
+        .socials { display: flex; gap: 0.8rem; margin-top: 1.5rem; }
+        .socials a {
+            width: 38px; height: 38px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #fff;
+        }
+        .socials a:hover { border-color: var(--teal); }
+        .foot-bottom { padding-top: 2rem; font-size: 0.85rem; text-align: center; opacity: 0.7; }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-}
+        /* Reveal on scroll (only when JS is running) */
+        .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .js .reveal.in { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .js .reveal { opacity: 1; transform: none; transition: none; }
+        }
 
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1024px) {
+            .menu { gap: 1.4rem; }
+            .menu a { font-size: 0.85rem; }
+            .fish { gap: 3rem; }
+        }
 
+        @media (max-width: 900px) {
+            .menu-toggle { display: block; }
+            .menu {
+                position: absolute;
+                top: var(--header-h); left: 0; right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                background: #fff;
+                border-bottom: 1px solid var(--line);
+                padding: 0.5rem 24px 1.5rem;
+                display: none;
+            }
+            .menu.open { display: flex; }
+            .menu li { border-bottom: 1px solid var(--line); }
+            .menu li:last-child { border: 0; padding-top: 1.2rem; }
+            .menu a { display: block; padding: 1rem 0; font-size: 1rem; }
+            .menu a:not(.btn)::after { display: none; }
+            .menu .btn { text-align: center; }
 
+            .section { padding: 4.5rem 0; }
+            .fish { grid-template-columns: 1fr; gap: 1.6rem; padding: 2.5rem 0; }
+            .fish:nth-child(even) .fish-img { order: 0; }
+            .fish h3 { margin-bottom: 1rem; }
+            .foot-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+            .foot-grid > :first-child { grid-column: 1 / -1; }
+        }
 
-  </style>
+        @media (max-width: 600px) {
+            :root { --header-h: 68px; --jump-h: 50px; }
+            body { font-size: 16px; }
+            .wrap { padding: 0 16px; }
+            .brand img { height: 40px; }
+            .menu { padding: 0.5rem 16px 1.5rem; }
+            .page-hero { min-height: 52vh; }
+            .jump-label { display: none; }
+            .count { text-align: left; }
+            .enquire-actions .btn { flex: 1 1 100%; }
+            .foot-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<header class="site-header">
-  <div class="header-inner">
-    <div class="logo">
-      <img src="RAX offical logo.png" alt="RAX Myanmar">
-    </div>
-
-    <nav class="nav-links">
-      <a href="https://raxmyanmar.com" target="_blank">Home</a>
-      <a href="#contact" class="contact-btn">Contact Us</a>
-
-    </nav>
-  </div>
-</header>
-<section class="hero-banner">
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <h1>
-      Our Product List<br>
-      
-    </h1>
-
-    <p>
-      RAX Myanmar supplies premium-quality fresh and dry fish products, handled with strict quality control and prepared for international export markets..
-    </p>
-
-  </div>
-</section>
-
-
-<section class="hero">
-  <div class="hero-inner">
-
-      </div>
-</section>
-<section class="product-section">
-  <div class="section-head">
-    <h2>Fresh Fish</h2>
-    <p>
-      Carefully sourced fresh fish products, processed and packed to meet
-      international export standards.
-    </p>
-  </div>
-
-  <div class="product-grid">
-    <div class="product-item">
-      <img src="rohu.webp" alt="Fresh Fish">
-      <h3>Rohu</h3>
-      <p class="sizes"><strong>Sizes:</strong> 1KG UP, 2KG UP, 3KG UP, 4KG UP, 5KG UP, 6KG UP, 7KG UP</p>
-    </div>
-
-    <div class="product-item">
-      <img src="Hilsa_Fish.jpg" alt="Fresh Fish">
-      <h3>Hilsha</h3>
-      <p class="sizes"><strong>Sizes:</strong>200-300 GM , 300-500GM , 500-800 GM , 800-1000GM , 1200-1500GM , 1500-1800 GM , 1800-2000GM</p>
-    </div>
-    <div class="product-item">
-      <img src="Black-Pomfret.jpeg" alt="Fresh Fish">
-      <h3>Black-Pomfret</h3>
-      <p class="sizes"><strong>Sizes:</strong> 200-300 GM , 300-500GM , 500-800GM , 800-1000gm , 1000GM UP</p>
-    </div>
-    <div class="product-item">
-      <img src="White_Pomfret.webp" alt="Fresh Fish">
-      <h3>White-Pomfret</h3>
-      <p class="sizes"><strong>Sizes:</strong> 100/200, 200/300</p>
-    </div>
-    <div class="product-item">
-      <img src="TILAPIA.avif" alt="Fresh Fish">
-      <h3>Talapia</h3>
-      <p class="sizes"><strong>Sizes:</strong>  800-1000GM, 1000-1500 GM , 1500-2000GM, 2 KG UP</p>
-    </div>
-    <div class="product-item">
-      <img src="Spanish_mack.jpg" alt="Fresh Fish">
-      <h3>Spanish Mackerel</h3>
-      <p class="sizes"><strong>Sizes:</strong> 2UP, 3UP</p>
-    </div>
-     <div class="product-item">
-      <img src="Tengra-fish.jpg" alt="Fresh Fish">
-      <h3>Tengra</h3>
-      <p class="sizes"><strong>Sizes:</strong> 250GM BLK</p>
-    </div>
-    <div class="product-item">
-      <img src="puti.webp" alt="Fresh Fish">
-      <h3>Puti</h3>
-      <p class="sizes"><strong>Sizes:</strong> 200/300GM, 1UP, 1500/2000GM, 2UP </p>
-    </div>
-    <div class="product-item">
-      <img src="poa-fish-30-gm-500-gm.jpeg" alt="Fresh Fish">
-      <h3>Poa Loose</h3>
-      <p class="sizes"><strong>Sizes:</strong> 100/200, 80/100</p>
-</div>
-<div class="product-item">
-      <img src="Pangasius.jpg" alt="Fresh Fish">
-      <h3>Pangush</h3>
-      <p class="sizes"><strong>Sizes:</strong> 1UP, 2UP, 3UP, 4UP</p>
-
-  </div>
-  <div class="product-item">
-      <img src="MIRGAL.webp" alt="Fresh Fish">
-      <h3>Mirgal</h3>
-      <p class="sizes"><strong>Sizes:</strong> 1500/2000GM, 2up, 3UP, 4UP</p>
-</div>
-<div class="product-item">
-      <img src="katla.webp" alt="Fresh Fish">
-      <h3>Katla</h3>
-      <p class="sizes"><strong>Sizes:</strong> 2up, 3UP, 4UP, 5UP</p>
-</div>
-<div class="product-item">
-      <img src="gulsha.jpg" alt="Fresh Fish">
-      <h3>Gulsha</h3>
-      <p class="sizes"><strong>Sizes:</strong> 800GM PKT</p>
-</div>
-<div class="product-item">
-      <img src="E-moila.jpg" alt="Fresh Fish">
-      <h3>E-Moila</h3>
-      <p class="sizes"><strong>Sizes:</strong> 250GM BLK</p>
-</div>
-<div class="product-item">
-      <img src="CARFU.jpg" alt="Fresh Fish">
-      <h3>Carfu</h3>
-      <p class="sizes"><strong>Sizes:</strong> 1.5UP, 2UP, 3UP </p>
-</div>
-<div class="product-item">
-      <img src="Ayer.jpg" alt="Fresh Fish">
-      <h3>Ayer</h3>
-      <p class="sizes"><strong>Sizes:</strong> 1UP, 1.5UP, 2UP </p>
-</div>
-<div class="product-item">
-      <img src="sarar.jpg" alt="Fresh Fish">
-      <h3>Sarar</h3>
-      <p class="sizes"><strong>Sizes:</strong> 800GM PKT </p>
-</div>
-  
-</section>
-<section class="product-section">
-  <div class="section-head">
-    <h2>Dry Fish</h2>
-    <p>
-      Naturally dried fish products processed under hygienic conditions for extended shelf life and export.
-    </p>
-  </div>
-
-  <div class="horizontal-scroll">
-
-    <div class="product-item horizontal-item">
-      <img src="dry anchovy.jpg" alt="Dry Anchovy">
-      <h3>Dry Anchovy</h3>
-      <p class="sizes"><strong>Sizes:</strong> 200GM PKT</p>
-    </div>
-
-    <div class="product-item horizontal-item">
-      <img src="dry lotia.webp" alt="Dry Fish">
-      <h3>Dry Lotia</h3>
-      <p class="sizes"><strong>Sizes:</strong> 200GM PKT
-</p>
-    </div>
-
-    <div class="product-item horizontal-item">
-      <img src="DRY FASHA.png" alt="Dry Fish">
-      <h3>Dry fasha</h3>
-      <p class="sizes"><strong>Sizes:</strong> 200GM PKT</p>
-    </div>
-
-    <!-- add more items freely -->
-
-  </div>
-</section>
-
-</section>
-<section id="contact" class="contact">
-  <h2>Get In Touch</h2>
-
-  <div class="contact-container">
-    <div class="contact-grid">
-
-      <div class="contact-card">
-        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-        <div class="contact-label">Address</div>
-        <div class="contact-info">
-          Bo Min Yaung Business Tower -4C,<br>
-          Mingalar Taung Nyunt Township,<br>
-          Yangon City, Myanmar, 11221
-        </div>
-      </div>
-
-      <div class="contact-card">
-        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-        <div class="contact-label">Mobile</div>
-        <div class="contact-info">
-          <a href="tel:+9595128277">+95 9 512 8277</a>
-        </div>
-      </div>
-
-      <div class="contact-card">
-        <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
-        <div class="contact-label">WhatsApp</div>
-        <div class="contact-info">
-          <a href="https://wa.me/9595128277" target="_blank">+95 9 512 8277</a>
-        </div>
-      </div>
-
-      <div class="contact-card">
-        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-        <div class="contact-label">Email</div>
-        <div class="contact-info">
-          <a href="mailto:office@raxmyanmar.com">office@raxmyanmar.com</a>
-        </div>
-      </div>
-
-      <div class="contact-card">
-        <div class="contact-icon"><i class="fa-solid fa-globe"></i></div>
-        <div class="contact-label">Website</div>
-        <div class="contact-info">
-          <a href="https://www.raxmyanmar.com" target="_blank">www.raxmyanmar.com</a>
-        </div>
-      </div>
-
-      <div class="contact-card">
-        <div class="contact-icon"><i class="fa-brands fa-facebook"></i></div>
-        <div class="contact-label">Facebook</div>
-        <div class="contact-info">
-          <a href="https://www.facebook.com/raxmyanmar.co" target="_blank">
-            facebook.com/RAXMyanmar
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<footer>
-  <div class="footer-content">
-
-    <div class="footer-about">
-      <h3>RAX Myanmar Co., Ltd</h3>
-      <p>
-        Your trusted partner for premium seafood and fresh produce export
-        from Myanmar to the Middle East and Southeast Asia.
-      </p>
-    </div>
-
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#standards">Our Standards</a></li>
-        <li><a href="#export">Export Services</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-links">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="mailto:office@raxmyanmar.com">office@raxmyanmar.com</a></li>
-        <li><a href="tel:+9595128277">+95 9 512 8277</a></li>
-        <li><a href="#contact">Get in Touch</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    &copy; 2024 RAX Myanmar Co., Ltd. All rights reserved.
-  </div>
-</footer>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
-
-
 <body>
 
+    <!-- Header -->
+    <header class="site-header">
+        <div class="wrap">
+            <a href="index.html" class="brand" aria-label="RAX Myanmar home">
+                <img src="RAX offical logo.png" alt="RAX Myanmar Co., Ltd.">
+            </a>
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="menu" id="menu">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="products.html" aria-current="page">Fish Products</a></li>
+                <li><a href="agro.html">Agro Products</a></li>
+                <li><a href="index.html#standards">Our Standards</a></li>
+                <li><a href="index.html#export">Export Services</a></li>
+                <li><a href="#contact" class="btn">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
 
+    <main>
 
+        <!-- Page hero -->
+        <section class="page-hero">
+            <div class="wrap">
+                <div class="crumbs"><a href="index.html">Home</a><span>/</span>Products<span>/</span>Fish</div>
+                <h1>Our <strong>Fish</strong></h1>
+                <p>RAX Myanmar supplies premium-quality fresh and dry fish products, handled with strict quality control and prepared for international export markets.</p>
+            </div>
+        </section>
+
+        <!-- Jump bar: add a link here when you add a new fish below -->
+        <nav class="jump" aria-label="Jump to a product">
+            <div class="wrap">
+                <span class="jump-label">Browse</span>
+                <ul>
+                    <li><a href="#rohu">Rohu</a></li>
+                    <li><a href="#hilsa">Hilsa</a></li>
+                    <li><a href="#barramundi">Barramundi</a></li>
+                    <li><a href="#black-pomfret">Black Pomfret</a></li>
+                    <li><a href="#white-pomfret">White Pomfret</a></li>
+                    <li><a href="#tilapia">Tilapia</a></li>
+                    <li><a href="#spanish-mackerel">Spanish Mackerel</a></li>
+                    <li><a href="#tengra">Tengra</a></li>
+                    <li><a href="#puti">Puti</a></li>
+                    <li><a href="#poa">Poa Loose</a></li>
+                    <li><a href="#pangush">Pangush</a></li>
+                    <li><a href="#mirgal">Mirgal</a></li>
+                    <li><a href="#katla">Katla</a></li>
+                    <li><a href="#gulsha">Gulsha</a></li>
+                    <li><a href="#e-moila">E-Moila</a></li>
+                    <li><a href="#carfu">Carfu</a></li>
+                    <li><a href="#ayer">Ayer</a></li>
+                    <li><a href="#sarar">Sarar</a></li>
+                    <li class="sep">|</li>
+                    <li><a href="#dry-anchovy">Dry Anchovy</a></li>
+                    <li><a href="#dry-lotia">Dry Lotia</a></li>
+                    <li><a href="#dry-fasha">Dry Fasha</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Fresh fish -->
+        <section id="fresh" class="section">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="eyebrow">Fresh fish</span>
+                        <h2>Fresh from <strong>Myanmar's waters</strong></h2>
+                        <p class="lead">Carefully sourced fresh fish products, processed and packed to meet international export standards.</p>
+                    </div>
+                    <div class="count">18<small>Varieties</small></div>
+                </div>
+
+                <div class="fish-list">
+                    <article class="fish reveal" id="rohu">
+                        <div class="fish-img"><img src="rohu.webp" alt="Rohu" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">01</span>
+                            <h3>Rohu</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>1500/2000 GM</li><li>1UP</li><li>2UP</li><li>3UP</li><li>4UP</li><li>5UP</li><li>6UP</li><li>7UP</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="hilsa">
+                        <div class="fish-img"><img src="Hilsa_Fish.jpg" alt="Hilsa" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">02</span>
+                            <h3>Hilsa</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>800/1000 GM</li><li>300/500 GM</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="barramundi">
+                        <div class="fish-img"><img src="barramundi-crop.jpg" alt="Barramundi" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">03</span>
+                            <h3>Barramundi</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>All sizes available</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="black-pomfret">
+                        <div class="fish-img"><img src="Black-Pomfret.jpeg" alt="Black Pomfret" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">04</span>
+                            <h3>Black Pomfret</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>1.5UP</li><li>2UP</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="white-pomfret">
+                        <div class="fish-img"><img src="White_Pomfret.webp" alt="White Pomfret" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">05</span>
+                            <h3>White Pomfret</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>100/200</li><li>800 GM PKT</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="tilapia">
+                        <div class="fish-img"><img src="TILAPIA.avif" alt="Tilapia" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">06</span>
+                            <h3>Tilapia</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>800/1000 GM</li><li>1UP</li><li>1.5UP</li><li>1500/2000 GM</li><li>2UP</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="spanish-mackerel">
+                        <div class="fish-img"><img src="Spanish_mack.jpg" alt="Spanish Mackerel" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">07</span>
+                            <h3>Spanish Mackerel</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>2UP</li><li>3UP</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="tengra">
+                        <div class="fish-img"><img src="Tengra-fish.jpg" alt="Tengra" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">08</span>
+                            <h3>Tengra</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>250 GM BLK</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="puti">
+                        <div class="fish-img"><img src="puti.webp" alt="Puti" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">09</span>
+                            <h3>Puti</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>200/300 GM</li><li>1UP</li><li>1500/2000 GM</li><li>2UP</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="poa">
+                        <div class="fish-img"><img src="poa-fish-30-gm-500-gm.jpeg" alt="Poa" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">10</span>
+                            <h3>Poa Loose</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>80/100</li><li>100/200</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="pangush">
+                        <div class="fish-img"><img src="Pangasius.jpg" alt="Pangush (Pangasius)" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">11</span>
+                            <h3>Pangush</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>1UP</li><li>2UP</li><li>3UP</li><li>4UP</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="mirgal">
+                        <div class="fish-img"><img src="MIRGAL.webp" alt="Mirgal" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">12</span>
+                            <h3>Mirgal</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>1500/2000 GM</li><li>2UP</li><li>3UP</li><li>4UP</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="katla">
+                        <div class="fish-img"><img src="katla.webp" alt="Katla" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">13</span>
+                            <h3>Katla</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>2UP</li><li>3UP</li><li>4UP</li><li>5UP</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="gulsha">
+                        <div class="fish-img"><img src="gulsha.jpg" alt="Gulsha" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">14</span>
+                            <h3>Gulsha</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>800 GM PKT</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="e-moila">
+                        <div class="fish-img"><img src="E-moila.jpg" alt="E-Moila" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">15</span>
+                            <h3>E-Moila</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>250 GM BLK</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="carfu">
+                        <div class="fish-img"><img src="CARFU.jpg" alt="Carfu" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">16</span>
+                            <h3>Carfu</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>1.5UP</li><li>2UP</li><li>3UP</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="ayer">
+                        <div class="fish-img"><img src="ayer-clean.jpg" alt="Ayer" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">17</span>
+                            <h3>Ayer</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>1UP</li><li>1.5UP</li><li>2UP</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="sarar">
+                        <div class="fish-img"><img src="sarar.jpg" alt="Sarar" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">18</span>
+                            <h3>Sarar</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>800 GM PKT</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dry fish -->
+        <section id="dry" class="section section-mist">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="eyebrow">Dry fish</span>
+                        <h2>Naturally <strong>dried</strong></h2>
+                        <p class="lead">Naturally dried fish products processed under hygienic conditions for extended shelf life and export.</p>
+                    </div>
+                    <div class="count">3<small>Varieties</small></div>
+                </div>
+
+                <div class="fish-list">
+                    <article class="fish reveal" id="dry-anchovy">
+                        <div class="fish-img"><img src="dry anchovy.jpg" alt="Dry Anchovy" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">01</span>
+                            <h3>Dry Anchovy</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>200 GM PKT</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="dry-lotia">
+                        <div class="fish-img"><img src="dry lotia.webp" alt="Dry Lotia" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">02</span>
+                            <h3>Dry Lotia</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>200 GM PKT</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="fish reveal" id="dry-fasha">
+                        <div class="fish-img"><img src="dry-fasha-clean.png" alt="Dry Fasha" loading="lazy"></div>
+                        <div>
+                            <span class="fish-no">03</span>
+                            <h3>Dry Fasha</h3>
+                            <div class="k">Available sizes</div>
+                            <ul class="sizes"><li>200 GM PKT</li></ul>
+                            <a href="#contact" class="fish-ask">Request a quote <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enquiry -->
+        <section id="contact" class="enquire">
+            <div class="wrap reveal">
+                <span class="eyebrow">Enquiries</span>
+                <h2>Looking for a <strong>specific size?</strong></h2>
+                <p class="lead">Custom orders are available upon request. Tell us the product, size and quantity and we'll send you a quote.</p>
+                <div class="enquire-actions">
+                    <a href="https://wa.me/9595128277" target="_blank" rel="noopener" class="btn"><i class="fa-brands fa-whatsapp"></i>&nbsp; WhatsApp Myanmar</a>
+                    <a href="https://wa.me/966507408910" target="_blank" rel="noopener" class="btn"><i class="fa-brands fa-whatsapp"></i>&nbsp; WhatsApp Saudi Arabia</a>
+                    <a href="mailto:office@raxmyanmar.com" class="btn btn-ghost"><i class="fa-regular fa-envelope"></i>&nbsp; Email us</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrap">
+            <div class="foot-grid">
+                <div>
+                    <a href="index.html" class="foot-logo"><img src="RAX offical logo.png" alt="RAX Myanmar Co., Ltd."></a>
+                    <p>Your trusted partner for premium seafood and fresh produce export from Myanmar to the Middle East and Southeast Asia.</p>
+                    <div class="socials">
+                        <a href="https://www.facebook.com/raxmyanmar.co" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/9595128277" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="mailto:office@raxmyanmar.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="products.html">Fish Products</a></li>
+                        <li><a href="agro.html">Agro Products</a></li>
+                        <li><a href="index.html#export">Export Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:office@raxmyanmar.com">office@raxmyanmar.com</a></li>
+                        <li><a href="tel:+9595128277">+95 9 512 8277</a> (Myanmar)</li>
+                        <li><a href="tel:+966507408910">+966 50 740 8910</a> (KSA)</li>
+                        <li>Bo Min Yaung Business Tower -4C, Mingalar Taung Nyunt Township, Yangon, Myanmar 11221</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot-bottom">
+                &copy; <span id="year">2026</span> RAX Myanmar Co., Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const toggle = document.querySelector('.menu-toggle');
+        const menu = document.getElementById('menu');
+        toggle.addEventListener('click', () => {
+            const open = menu.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open);
+            toggle.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+        });
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            menu.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }));
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        if ('IntersectionObserver' in window) {
+            // Reveal on scroll
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (!e.isIntersecting) return;
+                    e.target.classList.add('in');
+                    io.unobserve(e.target);
+                });
+            }, { threshold: 0.12 });
+            document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+            // Highlight the fish currently on screen in the jump bar
+            const links = {};
+            document.querySelectorAll('.jump a').forEach(a => links[a.hash.slice(1)] = a);
+            const bar = document.querySelector('.jump ul');
+            const spy = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (!e.isIntersecting) return;
+                    const link = links[e.target.id];
+                    if (!link) return;
+                    Object.values(links).forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                    bar.scrollTo({ left: link.offsetLeft - bar.clientWidth / 3, behavior: 'smooth' });
+                });
+            }, { rootMargin: '-45% 0px -50% 0px' });
+            document.querySelectorAll('.fish').forEach(el => spy.observe(el));
+        } else {
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+        }
+    </script>
+</body>
+</html>
