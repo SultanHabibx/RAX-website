@@ -204,13 +204,6 @@
         .intro-grid p + p { margin-top: 1.1rem; }
         .intro-img { position: relative; }
         .intro-img img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-        .intro-img::before {
-            content: '';
-            position: absolute;
-            inset: 2rem -2rem -2rem 2rem;
-            border: 1px solid var(--teal);
-            z-index: -1;
-        }
 
         /* Products */
         .tiles {
@@ -548,7 +541,6 @@
             .section { padding: 5rem 0; }
             .intro-grid, .split, .contact-grid, .pack-grid { grid-template-columns: 1fr; }
             .intro-img { max-width: 520px; }
-            .intro-img::before { inset: 1.2rem -1.2rem -1.2rem 1.2rem; }
             .tiles { grid-template-columns: 1fr; }
             .tile { aspect-ratio: 4 / 3; }
             .pillars { grid-template-columns: 1fr; }
